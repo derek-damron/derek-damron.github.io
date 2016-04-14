@@ -1,0 +1,5 @@
+var random_greeting = new Array ();
+	random_greeting[0] = "Professional history";
+	random_greeting[1] = "Open source projects";
+	random_greeting[2] = "Presentations from Meetups, conferences, etc.";
+	random_greeting[3] = "Blog posts";
