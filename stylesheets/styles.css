@@ -324,3 +324,12 @@ footer {
     color:#444;
   }
 }
+
+.wrapper img {
+	opacity: 1;
+	transition: 0s ease-in-out;
+}
+
+.wrapper img:hover {
+	opacity: .5;
+}
