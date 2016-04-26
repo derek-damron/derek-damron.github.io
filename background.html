@@ -1,4 +1,5 @@
 ---
+title: Background
 ---
 
 <!doctype html>
@@ -14,30 +15,9 @@
 	<script type="text/javascript" src="js/mobile.js"></script>
 </head>
 <body>
-	<div id="header">
-		<div id="name">
-			<a href="index.html" class="logo">
-				Derek Damron
-			</a>
-		</div>
-		<ul id="navigation">
-			<li>
-				<a href="index.html">Home</a>
-			</li>
-			<li class="selected">
-				<a href="background.html">Background</a>
-			</li>
-			<li>
-				<a href="projects.html">Projects</a>
-			</li>
-			<li>
-				<a href="media.html">Media</a>
-			</li>
-			<li>
-				<a href="blog.html">Blog</a>
-			</li>
-		</ul>
-	</div>
+
+	{% include header.html %}
+
 	<div id="body">
 		<h1><span>My Background</span></h1>
 		<div>
