@@ -1,0 +1,44 @@
+<div id="header">
+	<div id="name">
+		<a href="index.html" class="logo">
+			Derek Damron
+		</a>
+	</div>
+	<ul id="navigation">
+		<li class="{% if page.title == 'Home' %}selected{% endif %}">
+			<a href="index.html">Home</a>
+		</li>
+		<li class="{% if page.title == 'Background' %}selected{% endif %}">
+			<a href="background.html">Background</a>
+		</li>
+		<li class="{% if page.url contains 'projects' %}selected{% endif %}">
+			<a href="projects.html">Projects</a>
+		</li>
+		<li class="{% if page.url contains 'media' %}selected{% endif %}">
+			<a href="media.html">Media</a>
+		</li>
+		<li class="{% if page.url contains 'blog' %}selected{% endif %}">
+			<a href="blog.html">Blog</a>
+		</li>
+	</ul>
+</div>
+
+<!--
+<ul>
+  <li class="{% if page.overview %}current{% endif %}">
+    <a href="/">Home</a>
+  </li>
+  <li class="{% if page.url contains '/docs/' %}current{% endif %}">
+    <a href="/docs/home/">Doc<span class="show-on-mobiles">s</span><span class="hide-on-mobiles">umentation</span></a>
+  </li>
+  <li class="{% if page.author %}current{% endif %}">
+    <a href="/news/">News</a>
+  </li>
+  <li>
+    <a href="/help/">Help</a>
+  </li>
+  <li>
+    <a href="{{ site.repository }}"><span class="hide-on-mobiles">View on </span>GitHub</a>
+  </li>
+</ul>
+-->
