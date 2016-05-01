@@ -114,6 +114,8 @@ body {
 	margin: 0 0 20px
 }
 #body #featured img {
+	position: relative;
+	left: -90%; 
 	min-width: 960px;
 }
 #body #featured div {
@@ -121,9 +123,10 @@ body {
 	margin: 0;
 	padding: 0 2%;
 	position: absolute;
-	top: 0;
+	top: 10%;
 	text-align: left;
-	width: 96%;
+	width: 50%;
+	text-align: center;
 }
 #body #featured div h2 {
 	font-size: 14px;
@@ -223,5 +226,6 @@ body {
 #footer div ul {
 	float: none;
 	margin: 0 auto;
-	width: 256px;
+	padding: 10px 0 0 0;
+	width: 128px;
 }
