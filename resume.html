@@ -1,66 +1,141 @@
 ---
 ---
 
-{% include top.html %}
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Derek Damron's Resume</title>
+	<link rel="stylesheet" type="text/css" href="css/resume_base.css">
+	<link rel="stylesheet" type="text/css" href="css/resume_layout.css">
+	<link rel="stylesheet" type="text/css" href="css/resume_skeleton.css">
+	<link rel="shortcut icon" type="image/png" href="img/icon_blackcat_16.png">
+</head>
 
 <body>
-	<div id="body">
-		<h1><span>Coming Soon!</span></h1>
-	</div>
-	<!--
-	<div id="header">
-		<div id="name">
-			<a href="index.html" class="logo">
-				Derek Damron
-			</a>
-		</div>
-		<ul id="navigation">
-			<li>
-				<a href="index.html">Home</a>
-			</li>
-			<li class="selected">
-				<a href="background.html">Background</a>
-			</li>
-			<li>
-				<a href="projects.html">Projects</a>
-			</li>
-			<li>
-				<a href="media.html">Media</a>
-			</li>
-			<li>
-				<a href="blog.html">Blog</a>
-			</li>
-		</ul>
-	</div>
-	<div id="body">
-		<h1><span>My Background</span></h1>
-		<div>
-			<div class="article">
-				Check out the timeline below for an interactive view of my background, experiences, and accomplishments!
+<div class="container">
+    <header class="three columns">
+        <img src="images/professional_derek.jpg" class="me">
+        <h1>Derek Damron</h1>
+        <p>
+            <a href="mailto:damrondm@gmail.com">damrondm@gmail.com</a><br/>
+        </p>
+        <p>
+            (479) 774-1757
+        </p>
+        <p>
+            <a href="derek-damron.github.io">derek-damron.github.io</a>
+        </p>
+    </header>
+    <div class="thirteen columns clearfix">
+		<section class="thirteen columns">
+			<h1>Employment</h1>
+			<article>
+				<header>
+					<h1>Data Scientist</h1>
+					<span><address>Allstate @ Menlo Park, CA</address><time>June 2015 to Present</time></span>
+				</header>
 				<p>
-					If pen and paper is more your style, you can find a resume here.
+					At Allstate I work with business partners to help them understand how their data can be utilized to make better decisions.
 				</p>
-			</div>
-			<iframe src='https://cdn.knightlab.com/libs/timeline3/latest/embed/index.html?source=1Ggect5C7Gp3uRnyghm7E0n4e2PfjP4_tQbkvkYVid3o&font=Default&lang=en&initial_zoom=1&start_at_slide=15' width='75%' height='650' frameborder='0'></iframe>
-		</div>
-	</div>
-	<div id="footer">
-		<div>
-			<p>
-				&copy; 2016 Derek Damron. All rights reserved.
-				<br>
-				Favicon made by Freepik from <a href="www.flaticon.com">flaticon</a>.
-			</p>
-			<ul>
-				<li>
-					<a href="https://www.linkedin.com/in/derekdamron" id="linkedin" target="_blank">LinkedIn</a>
-				</li>
-				<li>
-					<a href="https://github.com/derek-damron" id="github" target="_blank">GitHub</a>
-				</li>
-			</ul>
-		</div>
-	</div>
-	-->
+				<p>
+					Some of my projects at Allstate have included:
+				</p>
+				<p>
+					<ul>
+						<li>
+							Leading a project with a technology group to understand the drivers of server and application outages.
+							This work involved managing the scope of the project, communicating findings and next steps, and identifying opportunities for collaboration with business users.
+						</li>
+						<li>
+							Improving Allstate's life insurance product by working with other data scientists, data engineers and business stakeholders.
+							This work has involved building additional features for building models, handling of data quality issues such as censoring and under-reporting, and identifying opportunities to improve collaboration.
+						</li>
+						<li>
+							Building and maintaining a general-purpose data exploration tool in R and Shiny.
+							This tool has been presented to both other data scientists and business users.
+						</li>
+					</ul>				
+				</p>
+			</article>
+			<article>
+				<header>
+					<h1>Quantitative Analyst and Research Consultant</h1>
+					<span><address>Hanover Research @ Washington, DC</address><time>July 2013 to May 2015</time></span>
+				</header>
+				<p>
+					At Hanover Research I delivered actionable insights to our enterprise partners using statistical and data mining methodologies. 
+					This position involved communicating data scopes, needs, and results with both internal and external stakeholders ranging from entry-level employees to executive leadership.  
+					I worked almost exclusively with R and Python. 
+				</p>
+				<p>
+					The projects I led at Hanover include:
+			    </p>
+				<p>
+					<ul>
+						<li>
+							Segmented 45,000 products via cluster analysis by using 5 years of sales data to group together products with similar sales patterns across several product classes.
+							These segmentations were used to predict product sales behavior across specific time periods based on metadata in order to improve future supply management and plan promotional incentives.
+						</li>
+						<li>
+							Developed a prospect scoring system using logistic regression on data that included 360 demographic and psychographic variables on 4.7 million prospects and clients.
+							This scoring system was then implemented into an internal database system to dynamically score new prospects for prioritization in future campaigns.
+						</li>
+					</ul>
+				</p>
+			</article>
+			<article>
+				<header>
+					<h1>Database Analyst and Application Developer</h1>
+					<span><address>Acxiom @ Little Rock, AR</address><time>June 2010 to Feb 2013</time></span>
+				</header>
+				<p>
+					At Acxiom I worked with customer databases for a large financial services client.  
+					My primary responsibilities were translating business requirements into automated file processing for database marketing and communicating these processes to business analysts for monitoring.  
+					This role involved interacting with many stakeholders of varying degrees of technical expertise, including but not limited to programmers, team leaders, and client-side analysts.  
+					I worked primarily in Unix and SQL.  
+				</p>
+				<p>
+					Some of my accomplishments include:
+			    </p>
+				<p>
+					<ul>
+						<li>
+							Received the Acxiom Gold Coin/Badge awards for training production associates on source file procedure and for ad hoc work on a new account.
+						</li>
+						<li>
+							Optimized file processing procedure to save roughly 20 hours in lost processing time per monthly work cycle by troubleshooting common processing errors.
+						</li>
+						<li>
+							Designed a single automation platform in order to simplify the automated processing of over 100 files per week by consolidating several different automated procedures.
+						</li>
+					</ul>
+				</p>
+			</article>
+			
+			<h1>Education</h1>
+			<article>
+				<header>
+					<h1>The George Washington University</h1>
+					<span><address>Master’s degree, Statistics</address><time>2012 to 2014 (3.74 GPA)</time></span>
+				</header>
+				<p>
+					Attended on a CCAS Fellowship Award with a curriculum focused on applied statistics, data mining, and statistical programming.
+				</p>
+			</article>
+			<article>
+				<header>
+					<h1>University of Central Arkansas</h1>
+					<span><address>Bachelor’s degree, Mathematics</address><time>2006 to 2010 (3.97 GPA)</time></span>
+				</header>
+				<p>
+					Graduated Summa Cum Laude from the Honors College with a curriculum focused on theoretical and applied mathematics. 
+				</p>
+			</article>
+			
+		</section>
+    </div>
+</div>
 </body>
 </html>
