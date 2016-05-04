@@ -144,6 +144,13 @@ em {
     /*margin-right: 6px;*/
 }
 
+@media print {
+	body {
+		padding: 0;
+	}
+	
+}
+
 /*
 @media print {
     @page {
