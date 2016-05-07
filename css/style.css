@@ -154,6 +154,9 @@ p a:hover {
 #body > div .article p a:hover {
 	text-decoration: underline;
 }
+#body > div .timeline-mobile {
+	display: none;
+}
 #body div ul {
 	margin: 0;
 	padding: 24px 10px 0;

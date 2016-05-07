@@ -110,6 +110,12 @@ body {
 	font-size: 18px;
 	font-weight: bold;
 }
+#body > div .timeline-desktop {
+	display: none;
+}
+#body > div .timeline-mobile {
+	display: block;
+}
 #body #featured {
 	overflow: hidden;
 	margin: 0 0 20px
