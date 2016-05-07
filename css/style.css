@@ -141,11 +141,15 @@ p a:hover {
 	padding: 8px 27px 10px;
 }
 #body > div .article p {
-	margin: 10px 0 30px;
+	margin: 15px 0 15px;
+	line-height: 100%;
 }
 #body > div .article p a {
 	color: #0BA39C;
 	text-decoration: none;
+}
+#body > div .article p:first-child {
+	margin: 15px 0 0 0;
 }
 #body > div .article p a:hover {
 	text-decoration: underline;

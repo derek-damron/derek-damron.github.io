@@ -92,6 +92,7 @@ body {
 	display: block;
 	padding: 3%;
 	width: 94%;
+	margin-bottom: 15px;
 }
 #body > div {
 	padding: 0 5%;
