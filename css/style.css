@@ -115,7 +115,7 @@ p a:hover {
 }
 #body > div .article {
 	margin: 0 auto;
-	padding: 30px 30px 0;
+	padding: 15px 30px 0;
 	width: 560px;
 }
 #body > div .article h2 {
@@ -157,6 +157,58 @@ p a:hover {
 #body > div .timeline-mobile {
 	display: none;
 }
+#body #projects {
+	margin: 0 auto;
+	padding: 15px 30px 0;
+	width: 560px;
+	text-align: left;
+}
+#body #projects h2 {
+	font-family: "Arial Black", Gadget, sans-serif;
+	font-size: 32px;
+	font-weight: normal;
+	margin: 30px 0 20px;
+}
+#body #projects h2:first-child {
+	margin: 20px 0 0;
+}
+#body #projects h3 {
+	color: #252525;
+	line-height: 24px;
+	margin: 0;
+	padding: 0;
+}
+#body #projects h4 {
+	background: #252525;
+	color: #fff;
+	display: inline-block;
+	font-family: "Arial Black", Gadget, sans-serif;
+	font-size: 25px;
+	font-weight: normal;
+	margin: 0 0 30px;
+	padding: 8px 27px 10px;
+}
+#body #projects p {
+	margin: 15px 0 15px;
+	line-height: 100%;
+}
+#body #projects p:first-child {
+	margin: 15px 0 0 0;
+}
+#body #projects a {
+	color: #0BA39C;
+	text-decoration: none;
+}
+#body #projects a:hover {
+	text-decoration: underline;
+}
+#body #projects ul li {
+	padding: auto;
+	margin: 2px 0;
+	list-style: disc outside;
+	display: list-item;
+}
+/*
 #body div ul {
 	margin: 0;
 	padding: 24px 10px 0;
@@ -223,6 +275,7 @@ p a:hover {
 	background: #fff;
 	border: 2px solid #252525;
 }
+*/
 #body #featured {
 	margin: 0 0 13px;
 	padding: 0;
