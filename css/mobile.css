@@ -116,6 +116,17 @@ body {
 #body > div .timeline-mobile {
 	display: block;
 }
+#body #projects {
+	padding: 0 5%;
+	width: 90%;
+}
+#body #projects h2, #body #projects h4 {
+	font-size: 24px;
+	font-weight: bold;
+}
+#body #projects ul li {
+	margin: 0 0 0 10%;
+}
 #body #featured {
 	overflow: hidden;
 	margin: 0 0 20px
