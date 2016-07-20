@@ -8,4 +8,7 @@
 	<link rel="stylesheet" type="text/css" href="css/mobile.css" media="screen and (max-width : 568px)">
 	<link rel="shortcut icon" type="image/png" href="img/icon_blackcat_16.png">
 	<script type="text/javascript" src="js/mobile.js"></script>
+	{% if jekyll.environment == 'production' %}
+		{% include analytics.html %}
+	{% endif %}
 </head>
