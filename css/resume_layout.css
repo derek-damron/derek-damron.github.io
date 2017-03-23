@@ -72,11 +72,15 @@ section > h1 {
     font-size: 140%;
     line-height: 125%;
     text-transform: uppercase;
-	margin-bottom: 20px;
+	margin-bottom: 10px;
+}
+
+section > h1:last-of-type {
+	margin-top: 20px;
 }
 
 article {
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 
 article > header > h1 {
@@ -127,14 +131,14 @@ article > p {
 }
 
 article > ul {
-	list-style: circle;
+	list-style: disc;
 	margin-left: 25px;
 	font-size: inherit;
     margin-bottom: 0;
 }
 
 article > ul li {
-	margin-bottom: 10px;
+	margin-bottom: 1px;
 }
 
 em {
