@@ -1,0 +1,70 @@
+---
+title: Nightreign Bosses
+---
+
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Nightreign Bosses</title>
+	<link rel="stylesheet" type="text/css" href="css/nightreign.css">
+	<link rel="icon" type="image/png" href="images/icon_blackcat_16.png" />
+</head>
+<body>
+	<div class="nightreign-page">
+		<h1>Nightreign Bosses</h1>
+		<div class="nightreign-controls">
+			<label for="nightreign-nightlord">Nightlord:</label>
+			<select id="nightreign-nightlord" aria-label="Filter by nightlord">
+				<option value="">All</option>
+			</select>
+		</div>
+		<table class="nightreign-table">
+			<thead>
+				<tr>
+					<th>Boss</th>
+					<th>Night</th>
+					<th>Standard</th>
+					<th>Slash</th>
+					<th>Strike</th>
+					<th>Pierce</th>
+					<th>Magic</th>
+					<th>Fire</th>
+					<th>Lightning</th>
+					<th>Holy</th>
+					<th>Poison</th>
+					<th>Rot</th>
+					<th>Bleed</th>
+					<th>Frostbite</th>
+					<th>Sleep</th>
+					<th>Madness</th>
+				</tr>
+			</thead>
+			<tbody>
+				{% for row in site.data.nightreign %}
+				<tr class="hidden" data-nightlord="{{ row.nightlord | default: '' }}">
+					<td>{{ row.name }}</td>
+					<td>{{ row.night | default: '' }}</td>
+					<td>{% if row.standard != nil %}{{ row.standard }}%{% else %}—{% endif %}</td>
+					<td>{% if row.slash != nil %}{{ row.slash }}%{% else %}—{% endif %}</td>
+					<td>{% if row.strike != nil %}{{ row.strike }}%{% else %}—{% endif %}</td>
+					<td>{% if row.pierce != nil %}{{ row.pierce }}%{% else %}—{% endif %}</td>
+					<td>{% if row.magic != nil %}{{ row.magic }}%{% else %}—{% endif %}</td>
+					<td>{% if row.fire != nil %}{{ row.fire }}%{% else %}—{% endif %}</td>
+					<td>{% if row.lightning != nil %}{{ row.lightning }}%{% else %}—{% endif %}</td>
+					<td>{% if row.holy != nil %}{{ row.holy }}%{% else %}—{% endif %}</td>
+					<td>{% if row.poison != nil %}{{ row.poison }}{% else %}—{% endif %}</td>
+					<td>{% if row.rot != nil %}{{ row.rot }}{% else %}—{% endif %}</td>
+					<td>{% if row.bleed != nil %}{{ row.bleed }}{% else %}—{% endif %}</td>
+					<td>{% if row.frostbite != nil %}{{ row.frostbite }}{% else %}—{% endif %}</td>
+					<td>{% if row.sleep != nil %}{{ row.sleep }}{% else %}—{% endif %}</td>
+					<td>{% if row.madness != nil %}{{ row.madness }}{% else %}—{% endif %}</td>
+				</tr>
+				{% endfor %}
+			</tbody>
+		</table>
+	</div>
+	<script src="js/nightreign.js"></script>
+</body>
+</html>

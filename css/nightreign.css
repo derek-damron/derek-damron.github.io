@@ -1,0 +1,51 @@
+/* nightreign.html – interactive table page */
+
+.nightreign-page {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	max-width: 960px;
+	margin: 0 auto;
+	padding: 2rem;
+}
+
+.nightreign-controls {
+	margin-bottom: 1rem;
+}
+
+.nightreign-controls select {
+	font-size: 14px;
+	padding: 0.25rem 0.5rem;
+}
+
+.nightreign-table {
+	width: 100%;
+	border-collapse: collapse;
+}
+
+.nightreign-table th,
+.nightreign-table td {
+	border: 1px solid #ccc;
+	padding: 0.5rem 0.75rem;
+	text-align: left;
+}
+
+.nightreign-table th {
+	background: #f5f5f5;
+	font-weight: bold;
+}
+
+.nightreign-table tbody tr:nth-child(even) {
+	background: #fafafa;
+}
+
+.nightreign-table tbody tr:hover {
+	background: #eee;
+}
+
+.nightreign-table tbody tr {
+	display: none;
+}
+
+.nightreign-table tbody tr:not(.hidden) {
+	display: table-row;
+}
