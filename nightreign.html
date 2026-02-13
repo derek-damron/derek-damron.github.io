@@ -19,10 +19,24 @@ title: Nightreign Bosses
 			<select id="nightreign-nightlord" aria-label="Filter by nightlord">
 				<option value="">All</option>
 			</select>
+			<label for="nightreign-boss-trigger">Boss:</label>
+			<div class="nightreign-boss-dropdown" id="nightreign-boss-dropdown">
+				<button type="button" class="nightreign-boss-trigger" id="nightreign-boss-trigger" aria-label="Filter by boss" aria-haspopup="listbox" aria-expanded="false">
+					<span class="nightreign-boss-value">All</span>
+					<span class="nightreign-boss-arrow">▼</span>
+				</button>
+				<div class="nightreign-boss-dropdown-content" id="nightreign-boss-dropdown-content" role="listbox">
+					<input type="text" class="nightreign-boss-search" id="nightreign-boss-search" placeholder="Search bosses..." aria-label="Search bosses">
+					<ul class="nightreign-boss-list" id="nightreign-boss-list" role="listbox">
+						<li role="option" class="nightreign-boss-option" data-value="">All</li>
+					</ul>
+				</div>
+			</div>
 		</div>
 		<table class="nightreign-table">
 			<thead>
 				<tr>
+					<th>Nightlord</th>
 					<th>Boss</th>
 					<th>Night</th>
 					<th>Standard</th>
@@ -43,7 +57,8 @@ title: Nightreign Bosses
 			</thead>
 			<tbody>
 				{% for row in site.data.nightreign %}
-				<tr class="hidden" data-nightlord="{{ row.nightlord | default: '' }}">
+				<tr class="hidden" data-nightlord="{{ row.nightlord | default: '' }}" data-name="{{ row.name }}" data-night="{{ row.night | default: '' }}">
+					<td>{{ row.nightlord | default: '' }}</td>
 					<td>{{ row.name }}</td>
 					<td>{{ row.night | default: '' }}</td>
 					<td>{% if row.standard != nil %}{{ row.standard }}%{% else %}—{% endif %}</td>

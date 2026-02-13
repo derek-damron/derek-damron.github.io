@@ -22,11 +22,146 @@
 		select.appendChild(opt);
 	});
 
+	// Boss dropdown elements
+	var bossDropdown = document.getElementById('nightreign-boss-dropdown');
+	var bossTrigger = document.getElementById('nightreign-boss-trigger');
+	var bossValue = bossTrigger ? bossTrigger.querySelector('.nightreign-boss-value') : null;
+	var bossDropdownContent = document.getElementById('nightreign-boss-dropdown-content');
+	var bossSearch = document.getElementById('nightreign-boss-search');
+	var bossList = document.getElementById('nightreign-boss-list');
+	
+	if (!bossDropdown || !bossTrigger || !bossValue || !bossDropdownContent || !bossSearch || !bossList) return;
+
+	var selectedBoss = '';
+	var isDropdownOpen = false;
+
+	// Build unique boss options from NIGHT 1 and NIGHT 2 rows only
+	var bosses = [];
+	rows.forEach(function (row) {
+		var night = row.getAttribute('data-night') || '';
+		var name = row.getAttribute('data-name') || '';
+		if ((night === 'NIGHT 1' || night === 'NIGHT 2') && name && bosses.indexOf(name) === -1) {
+			bosses.push(name);
+		}
+	});
+	// Sort alphabetically
+	bosses.sort();
+
+	// Populate boss list
+	bosses.forEach(function (boss) {
+		var li = document.createElement('li');
+		li.className = 'nightreign-boss-option';
+		li.setAttribute('role', 'option');
+		li.setAttribute('data-value', boss);
+		li.textContent = boss;
+		bossList.appendChild(li);
+	});
+
+	var allOptions = bossList.querySelectorAll('.nightreign-boss-option');
+
+	// Filter options based on search input
+	function filterBossOptions() {
+		var searchValue = bossSearch.value.toLowerCase();
+		allOptions.forEach(function (option) {
+			var optionText = option.textContent.toLowerCase();
+			var matches = optionText.indexOf(searchValue) !== -1;
+			option.style.display = matches ? '' : 'none';
+		});
+	}
+
+	// Update displayed value
+	function updateBossDisplay() {
+		bossValue.textContent = selectedBoss || 'All';
+		bossTrigger.setAttribute('aria-expanded', isDropdownOpen ? 'true' : 'false');
+	}
+
+	// Open dropdown
+	function openDropdown() {
+		isDropdownOpen = true;
+		bossDropdownContent.classList.add('open');
+		bossSearch.value = '';
+		filterBossOptions();
+		updateBossDisplay();
+		setTimeout(function () {
+			bossSearch.focus();
+		}, 10);
+	}
+
+	// Close dropdown
+	function closeDropdown() {
+		isDropdownOpen = false;
+		bossDropdownContent.classList.remove('open');
+		bossSearch.value = '';
+		filterBossOptions();
+		updateBossDisplay();
+	}
+
+	// Select a boss option
+	function selectBoss(value) {
+		selectedBoss = value;
+		closeDropdown();
+		filter();
+	}
+
+	// Toggle dropdown on trigger click
+	bossTrigger.addEventListener('click', function (e) {
+		e.stopPropagation();
+		if (isDropdownOpen) {
+			closeDropdown();
+		} else {
+			openDropdown();
+		}
+	});
+
+	// Filter options as user types
+	bossSearch.addEventListener('input', filterBossOptions);
+
+	// Handle option clicks
+	allOptions.forEach(function (option) {
+		option.addEventListener('click', function () {
+			var value = option.getAttribute('data-value') || '';
+			selectBoss(value);
+		});
+	});
+
+	// Close dropdown on outside click
+	document.addEventListener('click', function (e) {
+		if (isDropdownOpen && !bossDropdown.contains(e.target)) {
+			closeDropdown();
+		}
+	});
+
+	// Close dropdown on Escape key
+	document.addEventListener('keydown', function (e) {
+		if (e.key === 'Escape' && isDropdownOpen) {
+			closeDropdown();
+			bossTrigger.focus();
+		}
+	});
+
+	// Handle keyboard navigation in search
+	bossSearch.addEventListener('keydown', function (e) {
+		if (e.key === 'Enter') {
+			var firstVisible = Array.from(allOptions).find(function (opt) {
+				return opt.style.display !== 'none';
+			});
+			if (firstVisible) {
+				var value = firstVisible.getAttribute('data-value') || '';
+				selectBoss(value);
+			}
+		}
+	});
+
 	function filter() {
-		var value = select.value;
+		var nightlordValue = select.value;
 		rows.forEach(function (row) {
 			var nightlord = row.getAttribute('data-nightlord') || '';
-			var show = value === '' || nightlord === value;
+			var name = row.getAttribute('data-name') || '';
+			
+			var nightlordMatch = nightlordValue === '' || nightlord === nightlordValue;
+			var bossMatch = selectedBoss === '' || name === selectedBoss;
+			
+			var show = nightlordMatch && bossMatch;
 			row.classList.toggle('hidden', !show);
 		});
 	}
