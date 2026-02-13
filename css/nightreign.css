@@ -128,6 +128,14 @@
 	font-weight: bold;
 }
 
+.nightreign-th-icon {
+	display: block;
+	width: 24px;
+	height: 24px;
+	margin: 0 auto;
+	object-fit: contain;
+}
+
 .nightreign-table tbody tr:nth-child(even) {
 	background: #fafafa;
 }
@@ -142,4 +150,47 @@
 
 .nightreign-table tbody tr:not(.hidden) {
 	display: table-row;
+}
+
+.nightreign-icon-reference {
+	margin-top: 2rem;
+	padding-top: 1.5rem;
+	border-top: 1px solid #ccc;
+}
+
+.nightreign-icon-reference h2 {
+	font-size: 1.25rem;
+	margin-bottom: 0.5rem;
+}
+
+.nightreign-icon-reference-desc {
+	font-size: 13px;
+	color: #555;
+	margin-bottom: 1rem;
+}
+
+.nightreign-icon-reference-desc a {
+	color: #0066cc;
+}
+
+.nightreign-icon-grid {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 1rem;
+}
+
+.nightreign-icon-grid figure {
+	margin: 0;
+	text-align: center;
+}
+
+.nightreign-icon-grid img {
+	display: block;
+	object-fit: contain;
+}
+
+.nightreign-icon-grid figcaption {
+	font-size: 12px;
+	margin-top: 0.25rem;
+	color: #555;
 }
