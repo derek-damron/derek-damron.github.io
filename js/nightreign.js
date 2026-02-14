@@ -3,12 +3,21 @@
 	var table = document.querySelector('.nightreign-table');
 	if (!select || !table) return;
 
+	function isHeaderRow(row) {
+		var c = (row.getAttribute && row.getAttribute('class')) || row.className || '';
+		return c.indexOf('nightreign-night-header') !== -1;
+	}
+	function hasHiddenClass(row) {
+		var c = (row.getAttribute && row.getAttribute('class')) || row.className || '';
+		return c.indexOf('hidden') !== -1;
+	}
+
 	var tbody = table.querySelector('tbody');
 	var allRows = tbody ? tbody.querySelectorAll('tr') : [];
 	var dataRows = [];
 	var headerRows = [];
 	allRows.forEach(function (row) {
-		if (row.classList.contains('nightreign-night-header')) {
+		if (isHeaderRow(row)) {
 			headerRows.push(row);
 		} else {
 			dataRows.push(row);
@@ -186,7 +195,7 @@
 			dataRows.forEach(function (row) {
 				if (row.getAttribute('data-nightlord') === headerNightlord &&
 					row.getAttribute('data-night') === headerNight &&
-					!row.classList.contains('hidden')) {
+					!hasHiddenClass(row)) {
 					hasVisibleInGroup = true;
 				}
 			});
@@ -195,8 +204,8 @@
 		// Hide a section header if the previous visible row has the same night label (e.g. one "Night 2" when filtering to one boss)
 		var lastNight = null;
 		allRows.forEach(function (row) {
-			if (row.classList.contains('nightreign-night-header')) {
-				if (!row.classList.contains('hidden')) {
+			if (isHeaderRow(row)) {
+				if (!hasHiddenClass(row)) {
 					var headerNight = row.getAttribute('data-night') || '';
 					if (lastNight === headerNight) {
 						row.classList.add('hidden');
@@ -205,7 +214,7 @@
 					}
 				}
 			} else {
-				if (!row.classList.contains('hidden')) {
+				if (!hasHiddenClass(row)) {
 					lastNight = row.getAttribute('data-night') || '';
 				}
 			}
@@ -213,5 +222,6 @@
 	}
 
 	select.addEventListener('change', filter);
-	// Do not run filter() on load – table stays hidden until user selects a value
+	// Run filter once so initial view (including section headers) is correct on first paint
+	filter();
 })();
