@@ -166,6 +166,10 @@
 	background: #6b6b6b;
 }
 
+.nightreign-table tbody td.nightreign-boss-merged {
+	vertical-align: top;
+}
+
 /* Value-based cell colors (WCAG AA: light tints + dark text for 4.5:1 contrast) */
 .nightreign-table tbody td.nightreign-cell-red {
 	background: #f8d7da;

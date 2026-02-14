@@ -61,6 +61,7 @@ title: Nightreign Bosses
 			<tbody>
 				{% assign prev_night = '' %}
 				{% assign prev_nightlord = '' %}
+				{% assign prev_group = '' %}
 				{% for row in site.data.nightreign %}
 				{% if row.night == 'NIGHTLORD' %}
 					{% if prev_nightlord != row.nightlord %}
@@ -75,9 +76,16 @@ title: Nightreign Bosses
 				</tr>
 					{% endif %}
 				{% endif %}
-				<tr class="hidden" data-nightlord="{{ row.nightlord | default: '' }}" data-name="{{ row.name }}" data-night="{{ row.night | default: '' }}">
+				<tr class="hidden" data-nightlord="{{ row.nightlord | default: '' }}" data-name="{{ row.name }}" data-night="{{ row.night | default: '' }}"{% if row.group %} data-group="{{ row.group }}"{% endif %}>
 					<td>{{ row.nightlord | default: '' }}</td>
+					{% if row.group %}
+						{% if prev_group != row.group %}
+							{% assign group_info = site.data.nightreign_groups | where: "id", row.group | first %}
+					<td rowspan="{{ group_info.names | size }}" class="nightreign-boss-merged">{{ group_info.names | join: " / " }}</td>
+						{% endif %}
+					{% else %}
 					<td>{{ row.name }}</td>
+					{% endif %}
 					<td class="{% if row.standard == nil %}nightreign-cell-yellow{% elsif row.standard > 0 %}nightreign-cell-red{% else %}nightreign-cell-green{% endif %}">{% if row.standard != nil %}{{ row.standard }}%{% else %}—{% endif %}</td>
 					<td class="{% if row.slash == nil %}nightreign-cell-yellow{% elsif row.slash > 0 %}nightreign-cell-red{% else %}nightreign-cell-green{% endif %}">{% if row.slash != nil %}{{ row.slash }}%{% else %}—{% endif %}</td>
 					<td class="{% if row.strike == nil %}nightreign-cell-yellow{% elsif row.strike > 0 %}nightreign-cell-red{% else %}nightreign-cell-green{% endif %}">{% if row.strike != nil %}{{ row.strike }}%{% else %}—{% endif %}</td>
@@ -95,6 +103,7 @@ title: Nightreign Bosses
 				</tr>
 				{% assign prev_night = row.night %}
 				{% assign prev_nightlord = row.nightlord %}
+				{% if row.group %}{% assign prev_group = row.group %}{% else %}{% assign prev_group = '' %}{% endif %}
 				{% endfor %}
 			</tbody>
 		</table>

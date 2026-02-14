@@ -187,12 +187,24 @@
 
 	function filter() {
 		var nightlordValue = select.value;
+		var groupToShow = null;
+		if (selectedBoss) {
+			var selectedRow = Array.from(dataRows).find(function (row) {
+				return row.getAttribute('data-name') === selectedBoss;
+			});
+			if (selectedRow) {
+				groupToShow = selectedRow.getAttribute('data-group') || null;
+			}
+		}
 		dataRows.forEach(function (row) {
 			var nightlord = row.getAttribute('data-nightlord') || '';
 			var name = row.getAttribute('data-name') || '';
+			var group = row.getAttribute('data-group') || null;
 			
 			var nightlordMatch = nightlordValue === '' || nightlord === nightlordValue;
-			var bossMatch = selectedBoss === '' || name === selectedBoss;
+			var bossMatch = selectedBoss === '' ||
+				name === selectedBoss ||
+				(groupToShow && group === groupToShow);
 			
 			var show = nightlordMatch && bossMatch;
 			row.classList.toggle('hidden', !show);
