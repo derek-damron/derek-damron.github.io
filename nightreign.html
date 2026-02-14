@@ -1,0 +1,113 @@
+---
+title: Nightreign Bosses
+---
+
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Nightreign Bosses</title>
+	<link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/css/nightreign.css">
+	<link rel="icon" type="image/png" href="{{ site.baseurl }}/images/icon_blackcat_16.png" />
+</head>
+<body>
+	<div class="nightreign-page">
+		<h1>Nightreign Bosses</h1>
+		<div class="nightreign-controls">
+			<label for="nightreign-nightlord">Nightlord:</label>
+			<select id="nightreign-nightlord" aria-label="Filter by nightlord">
+				<option value="">All</option>
+			</select>
+			<label for="nightreign-boss-trigger">Boss:</label>
+			<div class="nightreign-boss-dropdown" id="nightreign-boss-dropdown">
+				<button type="button" class="nightreign-boss-trigger" id="nightreign-boss-trigger" aria-label="Filter by boss" aria-haspopup="listbox" aria-expanded="false">
+					<span class="nightreign-boss-value">All</span>
+					<span class="nightreign-boss-arrow">▼</span>
+				</button>
+				<div class="nightreign-boss-dropdown-content" id="nightreign-boss-dropdown-content" role="listbox">
+					<input type="text" class="nightreign-boss-search" id="nightreign-boss-search" placeholder="Search bosses..." aria-label="Search bosses">
+					<ul class="nightreign-boss-list" id="nightreign-boss-list" role="listbox">
+						<li role="option" class="nightreign-boss-option" data-value="">All</li>
+					</ul>
+				</div>
+			</div>
+			<label for="nightreign-protanopia">
+				<input type="checkbox" id="nightreign-protanopia" aria-label="Use protanopia-friendly table colors" title="Helps users with red–green color vision deficiency (protanopia)">
+				Protanopia-friendly colors
+			</label>
+		</div>
+		<table class="nightreign-table">
+			<thead>
+				<tr>
+					<th>Nightlord</th>
+					<th>Boss</th>
+					<th><img src="{{ site.baseurl }}/images/icons/nightreign/standard-icon.png" alt="Standard" class="nightreign-th-icon" title="Standard"></th>
+					<th><img src="{{ site.baseurl }}/images/icons/nightreign/slash-icon.png" alt="Slash" class="nightreign-th-icon" title="Slash"></th>
+					<th><img src="{{ site.baseurl }}/images/icons/nightreign/strike-icon.png" alt="Strike" class="nightreign-th-icon" title="Strike"></th>
+					<th><img src="{{ site.baseurl }}/images/icons/nightreign/pierce-icon.png" alt="Pierce" class="nightreign-th-icon" title="Pierce"></th>
+					<th><img src="{{ site.baseurl }}/images/icons/nightreign/magic-icon.jpg" alt="Magic" class="nightreign-th-icon" title="Magic"></th>
+					<th><img src="{{ site.baseurl }}/images/icons/nightreign/fire-icon.jpg" alt="Fire" class="nightreign-th-icon" title="Fire"></th>
+					<th><img src="{{ site.baseurl }}/images/icons/nightreign/lightning-icon.jpg" alt="Lightning" class="nightreign-th-icon" title="Lightning"></th>
+					<th><img src="{{ site.baseurl }}/images/icons/nightreign/holy-icon.jpg" alt="Holy" class="nightreign-th-icon" title="Holy"></th>
+					<th><img src="{{ site.baseurl }}/images/icons/nightreign/poison-icon.png" alt="Poison" class="nightreign-th-icon" title="Poison"></th>
+					<th><img src="{{ site.baseurl }}/images/icons/nightreign/scarlet-rot-icon.png" alt="Rot" class="nightreign-th-icon" title="Scarlet Rot"></th>
+					<th><img src="{{ site.baseurl }}/images/icons/nightreign/blood-loss-icon.png" alt="Bleed" class="nightreign-th-icon" title="Blood Loss"></th>
+					<th><img src="{{ site.baseurl }}/images/icons/nightreign/frostbite-icon.png" alt="Frostbite" class="nightreign-th-icon" title="Frostbite"></th>
+					<th><img src="{{ site.baseurl }}/images/icons/nightreign/sleep-icon.png" alt="Sleep" class="nightreign-th-icon" title="Sleep"></th>
+					<th><img src="{{ site.baseurl }}/images/icons/nightreign/madness-icon.png" alt="Madness" class="nightreign-th-icon" title="Madness"></th>
+				</tr>
+			</thead>
+			<tbody>
+				{% assign prev_night = '' %}
+				{% assign prev_nightlord = '' %}
+				{% assign prev_group = '' %}
+				{% for row in site.data.nightreign %}
+				{% if row.night == 'NIGHTLORD' %}
+					{% if prev_nightlord != row.nightlord %}
+				<tr class="nightreign-night-header hidden" data-nightlord="{{ row.nightlord | default: '' }}" data-night="NIGHTLORD">
+					<td colspan="16">Nightlord</td>
+				</tr>
+					{% endif %}
+				{% elsif row.night == 'NIGHT 1' or row.night == 'NIGHT 2' %}
+					{% if prev_night != row.night or prev_nightlord != row.nightlord %}
+				<tr class="nightreign-night-header hidden" data-nightlord="{{ row.nightlord | default: '' }}" data-night="{{ row.night | default: '' }}">
+					<td colspan="16">{% if row.night == 'NIGHT 1' %}Night 1{% elsif row.night == 'NIGHT 2' %}Night 2{% else %}{{ row.night }}{% endif %}</td>
+				</tr>
+					{% endif %}
+				{% endif %}
+				<tr class="hidden" data-nightlord="{{ row.nightlord | default: '' }}" data-name="{{ row.name }}" data-night="{{ row.night | default: '' }}"{% if row.group %} data-group="{{ row.group }}"{% endif %}>
+					<td>{{ row.nightlord | default: '' }}</td>
+					{% if row.group %}
+						{% if prev_group != row.group %}
+							{% assign group_info = site.data.nightreign_groups | where: "id", row.group | first %}
+					<td rowspan="{{ group_info.names | size }}" class="nightreign-boss-merged">{{ group_info.names | join: " / " }}</td>
+						{% endif %}
+					{% else %}
+					<td>{{ row.name }}</td>
+					{% endif %}
+					<td class="{% if row.standard == nil %}nightreign-cell-yellow{% elsif row.standard > 0 %}nightreign-cell-red{% else %}nightreign-cell-green{% endif %}">{% if row.standard != nil %}{{ row.standard }}%{% else %}—{% endif %}</td>
+					<td class="{% if row.slash == nil %}nightreign-cell-yellow{% elsif row.slash > 0 %}nightreign-cell-red{% else %}nightreign-cell-green{% endif %}">{% if row.slash != nil %}{{ row.slash }}%{% else %}—{% endif %}</td>
+					<td class="{% if row.strike == nil %}nightreign-cell-yellow{% elsif row.strike > 0 %}nightreign-cell-red{% else %}nightreign-cell-green{% endif %}">{% if row.strike != nil %}{{ row.strike }}%{% else %}—{% endif %}</td>
+					<td class="{% if row.pierce == nil %}nightreign-cell-yellow{% elsif row.pierce > 0 %}nightreign-cell-red{% else %}nightreign-cell-green{% endif %}">{% if row.pierce != nil %}{{ row.pierce }}%{% else %}—{% endif %}</td>
+					<td class="{% if row.magic == nil %}nightreign-cell-yellow{% elsif row.magic > 0 %}nightreign-cell-red{% else %}nightreign-cell-green{% endif %}">{% if row.magic != nil %}{{ row.magic }}%{% else %}—{% endif %}</td>
+					<td class="{% if row.fire == nil %}nightreign-cell-yellow{% elsif row.fire > 0 %}nightreign-cell-red{% else %}nightreign-cell-green{% endif %}">{% if row.fire != nil %}{{ row.fire }}%{% else %}—{% endif %}</td>
+					<td class="{% if row.lightning == nil %}nightreign-cell-yellow{% elsif row.lightning > 0 %}nightreign-cell-red{% else %}nightreign-cell-green{% endif %}">{% if row.lightning != nil %}{{ row.lightning }}%{% else %}—{% endif %}</td>
+					<td class="{% if row.holy == nil %}nightreign-cell-yellow{% elsif row.holy > 0 %}nightreign-cell-red{% else %}nightreign-cell-green{% endif %}">{% if row.holy != nil %}{{ row.holy }}%{% else %}—{% endif %}</td>
+					<td class="{% if row.poison == nil %}nightreign-cell-dark-red{% elsif row.poison > 500 %}nightreign-cell-red{% elsif row.poison >= 200 %}nightreign-cell-yellow{% else %}nightreign-cell-green{% endif %}">{% if row.poison != nil %}{{ row.poison }}{% else %}—{% endif %}</td>
+					<td class="{% if row.rot == nil %}nightreign-cell-dark-red{% elsif row.rot > 500 %}nightreign-cell-red{% elsif row.rot >= 200 %}nightreign-cell-yellow{% else %}nightreign-cell-green{% endif %}">{% if row.rot != nil %}{{ row.rot }}{% else %}—{% endif %}</td>
+					<td class="{% if row.bleed == nil %}nightreign-cell-dark-red{% elsif row.bleed > 500 %}nightreign-cell-red{% elsif row.bleed >= 200 %}nightreign-cell-yellow{% else %}nightreign-cell-green{% endif %}">{% if row.bleed != nil %}{{ row.bleed }}{% else %}—{% endif %}</td>
+					<td class="{% if row.frostbite == nil %}nightreign-cell-dark-red{% elsif row.frostbite > 500 %}nightreign-cell-red{% elsif row.frostbite >= 200 %}nightreign-cell-yellow{% else %}nightreign-cell-green{% endif %}">{% if row.frostbite != nil %}{{ row.frostbite }}{% else %}—{% endif %}</td>
+					<td class="{% if row.sleep == nil %}nightreign-cell-dark-red{% elsif row.sleep > 500 %}nightreign-cell-red{% elsif row.sleep >= 200 %}nightreign-cell-yellow{% else %}nightreign-cell-green{% endif %}">{% if row.sleep != nil %}{{ row.sleep }}{% else %}—{% endif %}</td>
+					<td class="{% if row.madness == nil %}nightreign-cell-dark-red{% elsif row.madness > 500 %}nightreign-cell-red{% elsif row.madness >= 200 %}nightreign-cell-yellow{% else %}nightreign-cell-green{% endif %}">{% if row.madness != nil %}{{ row.madness }}{% else %}—{% endif %}</td>
+				</tr>
+				{% assign prev_night = row.night %}
+				{% assign prev_nightlord = row.nightlord %}
+				{% if row.group %}{% assign prev_group = row.group %}{% else %}{% assign prev_group = '' %}{% endif %}
+				{% endfor %}
+			</tbody>
+		</table>
+	</div>
+	<script src="{{ site.baseurl }}/js/nightreign.js"></script>
+</body>
+</html>

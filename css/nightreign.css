@@ -1,0 +1,242 @@
+/* nightreign.html – interactive table page */
+
+.nightreign-page {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	max-width: 960px;
+	margin: 0 auto;
+	padding: 2rem;
+}
+
+.nightreign-controls {
+	margin-bottom: 1rem;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 1rem;
+	align-items: center;
+}
+
+.nightreign-controls label {
+	margin-right: 0.5rem;
+}
+
+.nightreign-controls select {
+	font-size: 14px;
+	padding: 0.25rem 0.5rem;
+}
+
+.nightreign-boss-dropdown {
+	position: relative;
+	display: inline-block;
+}
+
+.nightreign-boss-trigger {
+	font-size: 14px;
+	padding: 0.25rem 0.5rem;
+	border: 1px solid #ccc;
+	background: white;
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	min-width: 200px;
+}
+
+.nightreign-boss-trigger:hover {
+	background: #f5f5f5;
+}
+
+.nightreign-boss-value {
+	flex: 1;
+	text-align: left;
+}
+
+.nightreign-boss-arrow {
+	margin-left: 0.5rem;
+	font-size: 10px;
+	color: #666;
+}
+
+.nightreign-boss-dropdown-content {
+	display: none;
+	position: absolute;
+	top: 100%;
+	left: 0;
+	z-index: 1000;
+	background: white;
+	border: 1px solid #ccc;
+	border-top: none;
+	min-width: 200px;
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+	margin-top: 1px;
+}
+
+.nightreign-boss-dropdown-content.open {
+	display: block;
+}
+
+.nightreign-boss-search {
+	width: 100%;
+	font-size: 14px;
+	padding: 0.5rem;
+	border: none;
+	border-bottom: 1px solid #ccc;
+	box-sizing: border-box;
+}
+
+.nightreign-boss-search:focus {
+	outline: 1px solid #0066cc;
+	outline-offset: -1px;
+}
+
+.nightreign-boss-list {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	max-height: 300px;
+	overflow-y: auto;
+}
+
+.nightreign-boss-option {
+	padding: 0.5rem;
+	cursor: pointer;
+	font-size: 14px;
+}
+
+.nightreign-boss-option:hover {
+	background: #f5f5f5;
+}
+
+.nightreign-boss-option[data-value=""] {
+	font-weight: bold;
+}
+
+.nightreign-table {
+	width: 100%;
+	border-collapse: collapse;
+}
+
+.nightreign-table th,
+.nightreign-table td {
+	border: 1px solid #ccc;
+	padding: 0.5rem 0.75rem;
+	text-align: center;
+	vertical-align: middle;
+}
+
+.nightreign-table th {
+	background: #f5f5f5;
+	font-weight: bold;
+}
+
+.nightreign-th-icon {
+	display: block;
+	width: 24px;
+	height: 24px;
+	margin: 0 auto;
+	object-fit: contain;
+}
+
+.nightreign-table tbody tr:not(.nightreign-night-header):nth-child(even) {
+	background: #fafafa;
+}
+
+.nightreign-table tbody tr:not(.nightreign-night-header):hover {
+	background: #eee;
+}
+
+.nightreign-table tbody tr {
+	display: none;
+}
+
+.nightreign-table tbody tr:not(.hidden) {
+	display: table-row;
+}
+
+/* Section header rows for NIGHT 1 / NIGHT 2 grouping */
+.nightreign-table tbody tr.nightreign-night-header td {
+	background: #6b6b6b;
+	color: #fff;
+	font-weight: bold;
+	text-align: center;
+	padding: 0.5rem 0.75rem;
+	border: 1px solid #555;
+}
+
+.nightreign-table tbody tr.nightreign-night-header:hover td {
+	background: #6b6b6b;
+}
+
+.nightreign-table tbody td.nightreign-boss-merged {
+	vertical-align: middle;
+}
+
+/* Value-based cell colors (WCAG AA: light tints + dark text for 4.5:1 contrast) */
+.nightreign-table tbody td.nightreign-cell-red {
+	background: #f8d7da;
+	color: #1a1a1a;
+}
+
+.nightreign-table tbody td.nightreign-cell-yellow {
+	background: #fff3cd;
+	color: #1a1a1a;
+}
+
+.nightreign-table tbody td.nightreign-cell-green {
+	background: #d4edda;
+	color: #1a1a1a;
+}
+
+.nightreign-table tbody td.nightreign-cell-dark-red {
+	background: #721c24;
+	color: #ffffff;
+}
+
+/* Protanopia-friendly overrides (toggle via .nightreign-protanopia on body) */
+body.nightreign-protanopia .nightreign-table tbody td.nightreign-cell-red { background: #2c5282; color: #ffffff; }
+body.nightreign-protanopia .nightreign-table tbody td.nightreign-cell-yellow { background: #cce5ff; color: #1a1a1a; }
+body.nightreign-protanopia .nightreign-table tbody td.nightreign-cell-green { background: #fff3cd; color: #1a1a1a; }
+body.nightreign-protanopia .nightreign-table tbody td.nightreign-cell-dark-red { background: #3d2e2e; color: #ffffff; }
+
+.nightreign-icon-reference {
+	margin-top: 2rem;
+	padding-top: 1.5rem;
+	border-top: 1px solid #ccc;
+}
+
+.nightreign-icon-reference h2 {
+	font-size: 1.25rem;
+	margin-bottom: 0.5rem;
+}
+
+.nightreign-icon-reference-desc {
+	font-size: 13px;
+	color: #555;
+	margin-bottom: 1rem;
+}
+
+.nightreign-icon-reference-desc a {
+	color: #0066cc;
+}
+
+.nightreign-icon-grid {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 1rem;
+}
+
+.nightreign-icon-grid figure {
+	margin: 0;
+	text-align: center;
+}
+
+.nightreign-icon-grid img {
+	display: block;
+	object-fit: contain;
+}
+
+.nightreign-icon-grid figcaption {
+	font-size: 12px;
+	margin-top: 0.25rem;
+	color: #555;
+}
