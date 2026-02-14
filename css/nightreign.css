@@ -187,6 +187,12 @@
 	color: #ffffff;
 }
 
+/* Protanopia-friendly overrides (toggle via .nightreign-protanopia on body) */
+body.nightreign-protanopia .nightreign-table tbody td.nightreign-cell-red { background: #2c5282; color: #ffffff; }
+body.nightreign-protanopia .nightreign-table tbody td.nightreign-cell-yellow { background: #cce5ff; color: #1a1a1a; }
+body.nightreign-protanopia .nightreign-table tbody td.nightreign-cell-green { background: #fff3cd; color: #1a1a1a; }
+body.nightreign-protanopia .nightreign-table tbody td.nightreign-cell-dark-red { background: #3d2e2e; color: #ffffff; }
+
 .nightreign-icon-reference {
 	margin-top: 2rem;
 	padding-top: 1.5rem;
