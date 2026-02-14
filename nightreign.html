@@ -38,7 +38,6 @@ title: Nightreign Bosses
 				<tr>
 					<th>Nightlord</th>
 					<th>Boss</th>
-					<th>Night</th>
 					<th><img src="images/icons/nightreign/standard-icon.png" alt="Standard" class="nightreign-th-icon" title="Standard"></th>
 					<th><img src="images/icons/nightreign/slash-icon.png" alt="Slash" class="nightreign-th-icon" title="Slash"></th>
 					<th><img src="images/icons/nightreign/strike-icon.png" alt="Strike" class="nightreign-th-icon" title="Strike"></th>
@@ -56,11 +55,25 @@ title: Nightreign Bosses
 				</tr>
 			</thead>
 			<tbody>
+				{% assign prev_night = '' %}
+				{% assign prev_nightlord = '' %}
 				{% for row in site.data.nightreign %}
+				{% if row.night == 'NIGHTLORD' %}
+					{% if prev_nightlord != row.nightlord %}
+				<tr class="nightreign-night-header hidden" data-nightlord="{{ row.nightlord | default: '' }}" data-night="NIGHTLORD">
+					<td colspan="16">Nightlord</td>
+				</tr>
+					{% endif %}
+				{% elsif row.night == 'NIGHT 1' or row.night == 'NIGHT 2' %}
+					{% if prev_night != row.night or prev_nightlord != row.nightlord %}
+				<tr class="nightreign-night-header hidden" data-nightlord="{{ row.nightlord | default: '' }}" data-night="{{ row.night | default: '' }}">
+					<td colspan="16">{% if row.night == 'NIGHT 1' %}Night 1{% elsif row.night == 'NIGHT 2' %}Night 2{% else %}{{ row.night }}{% endif %}</td>
+				</tr>
+					{% endif %}
+				{% endif %}
 				<tr class="hidden" data-nightlord="{{ row.nightlord | default: '' }}" data-name="{{ row.name }}" data-night="{{ row.night | default: '' }}">
 					<td>{{ row.nightlord | default: '' }}</td>
 					<td>{{ row.name }}</td>
-					<td>{{ row.night | default: '' }}</td>
 					<td class="{% if row.standard == nil %}nightreign-cell-yellow{% elsif row.standard > 0 %}nightreign-cell-red{% else %}nightreign-cell-green{% endif %}">{% if row.standard != nil %}{{ row.standard }}%{% else %}—{% endif %}</td>
 					<td class="{% if row.slash == nil %}nightreign-cell-yellow{% elsif row.slash > 0 %}nightreign-cell-red{% else %}nightreign-cell-green{% endif %}">{% if row.slash != nil %}{{ row.slash }}%{% else %}—{% endif %}</td>
 					<td class="{% if row.strike == nil %}nightreign-cell-yellow{% elsif row.strike > 0 %}nightreign-cell-red{% else %}nightreign-cell-green{% endif %}">{% if row.strike != nil %}{{ row.strike }}%{% else %}—{% endif %}</td>
@@ -76,6 +89,8 @@ title: Nightreign Bosses
 					<td class="{% if row.sleep == nil %}nightreign-cell-dark-red{% elsif row.sleep > 500 %}nightreign-cell-red{% elsif row.sleep >= 200 %}nightreign-cell-yellow{% else %}nightreign-cell-green{% endif %}">{% if row.sleep != nil %}{{ row.sleep }}{% else %}—{% endif %}</td>
 					<td class="{% if row.madness == nil %}nightreign-cell-dark-red{% elsif row.madness > 500 %}nightreign-cell-red{% elsif row.madness >= 200 %}nightreign-cell-yellow{% else %}nightreign-cell-green{% endif %}">{% if row.madness != nil %}{{ row.madness }}{% else %}—{% endif %}</td>
 				</tr>
+				{% assign prev_night = row.night %}
+				{% assign prev_nightlord = row.nightlord %}
 				{% endfor %}
 			</tbody>
 		</table>

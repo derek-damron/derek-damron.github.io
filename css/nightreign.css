@@ -136,11 +136,11 @@
 	object-fit: contain;
 }
 
-.nightreign-table tbody tr:nth-child(even) {
+.nightreign-table tbody tr:not(.nightreign-night-header):nth-child(even) {
 	background: #fafafa;
 }
 
-.nightreign-table tbody tr:hover {
+.nightreign-table tbody tr:not(.nightreign-night-header):hover {
 	background: #eee;
 }
 
@@ -150,6 +150,20 @@
 
 .nightreign-table tbody tr:not(.hidden) {
 	display: table-row;
+}
+
+/* Section header rows for NIGHT 1 / NIGHT 2 grouping */
+.nightreign-table tbody tr.nightreign-night-header td {
+	background: #6b6b6b;
+	color: #fff;
+	font-weight: bold;
+	text-align: center;
+	padding: 0.5rem 0.75rem;
+	border: 1px solid #555;
+}
+
+.nightreign-table tbody tr.nightreign-night-header:hover td {
+	background: #6b6b6b;
 }
 
 /* Value-based cell colors (WCAG AA: light tints + dark text for 4.5:1 contrast) */

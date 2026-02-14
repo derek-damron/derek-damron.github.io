@@ -4,11 +4,20 @@
 	if (!select || !table) return;
 
 	var tbody = table.querySelector('tbody');
-	var rows = tbody ? tbody.querySelectorAll('tr') : [];
+	var allRows = tbody ? tbody.querySelectorAll('tr') : [];
+	var dataRows = [];
+	var headerRows = [];
+	allRows.forEach(function (row) {
+		if (row.classList.contains('nightreign-night-header')) {
+			headerRows.push(row);
+		} else {
+			dataRows.push(row);
+		}
+	});
 
-	// Build unique nightlord options from row data
+	// Build unique nightlord options from data rows only
 	var nightlords = [];
-	rows.forEach(function (row) {
+	dataRows.forEach(function (row) {
 		var nl = row.getAttribute('data-nightlord') || '';
 		if (nl && nightlords.indexOf(nl) === -1) {
 			nightlords.push(nl);
@@ -35,9 +44,9 @@
 	var selectedBoss = '';
 	var isDropdownOpen = false;
 
-	// Build unique boss options from NIGHT 1 and NIGHT 2 rows only
+	// Build unique boss options from NIGHT 1 and NIGHT 2 data rows only
 	var bosses = [];
-	rows.forEach(function (row) {
+	dataRows.forEach(function (row) {
 		var night = row.getAttribute('data-night') || '';
 		var name = row.getAttribute('data-name') || '';
 		if ((night === 'NIGHT 1' || night === 'NIGHT 2') && name && bosses.indexOf(name) === -1) {
@@ -154,7 +163,7 @@
 
 	function filter() {
 		var nightlordValue = select.value;
-		rows.forEach(function (row) {
+		dataRows.forEach(function (row) {
 			var nightlord = row.getAttribute('data-nightlord') || '';
 			var name = row.getAttribute('data-name') || '';
 			
@@ -163,6 +172,43 @@
 			
 			var show = nightlordMatch && bossMatch;
 			row.classList.toggle('hidden', !show);
+		});
+		// Show a section header only if at least one visible data row has that nightlord + night
+		headerRows.forEach(function (headerRow) {
+			var headerNightlord = headerRow.getAttribute('data-nightlord') || '';
+			var headerNight = headerRow.getAttribute('data-night') || '';
+			var nightlordMatch = nightlordValue === '' || headerNightlord === nightlordValue;
+			if (!nightlordMatch) {
+				headerRow.classList.add('hidden');
+				return;
+			}
+			var hasVisibleInGroup = false;
+			dataRows.forEach(function (row) {
+				if (row.getAttribute('data-nightlord') === headerNightlord &&
+					row.getAttribute('data-night') === headerNight &&
+					!row.classList.contains('hidden')) {
+					hasVisibleInGroup = true;
+				}
+			});
+			headerRow.classList.toggle('hidden', !hasVisibleInGroup);
+		});
+		// Hide a section header if the previous visible row has the same night label (e.g. one "Night 2" when filtering to one boss)
+		var lastNight = null;
+		allRows.forEach(function (row) {
+			if (row.classList.contains('nightreign-night-header')) {
+				if (!row.classList.contains('hidden')) {
+					var headerNight = row.getAttribute('data-night') || '';
+					if (lastNight === headerNight) {
+						row.classList.add('hidden');
+					} else {
+						lastNight = headerNight;
+					}
+				}
+			} else {
+				if (!row.classList.contains('hidden')) {
+					lastNight = row.getAttribute('data-night') || '';
+				}
+			}
 		});
 	}
 
