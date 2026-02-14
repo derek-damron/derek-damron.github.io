@@ -120,7 +120,8 @@
 .nightreign-table td {
 	border: 1px solid #ccc;
 	padding: 0.5rem 0.75rem;
-	text-align: left;
+	text-align: center;
+	vertical-align: middle;
 }
 
 .nightreign-table th {
@@ -167,7 +168,7 @@
 }
 
 .nightreign-table tbody td.nightreign-boss-merged {
-	vertical-align: top;
+	vertical-align: middle;
 }
 
 /* Value-based cell colors (WCAG AA: light tints + dark text for 4.5:1 contrast) */
