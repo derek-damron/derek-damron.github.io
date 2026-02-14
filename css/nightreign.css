@@ -152,6 +152,27 @@
 	display: table-row;
 }
 
+/* Value-based cell colors (WCAG AA: light tints + dark text for 4.5:1 contrast) */
+.nightreign-table tbody td.nightreign-cell-red {
+	background: #f8d7da;
+	color: #1a1a1a;
+}
+
+.nightreign-table tbody td.nightreign-cell-yellow {
+	background: #fff3cd;
+	color: #1a1a1a;
+}
+
+.nightreign-table tbody td.nightreign-cell-green {
+	background: #d4edda;
+	color: #1a1a1a;
+}
+
+.nightreign-table tbody td.nightreign-cell-dark-red {
+	background: #721c24;
+	color: #ffffff;
+}
+
 .nightreign-icon-reference {
 	margin-top: 2rem;
 	padding-top: 1.5rem;

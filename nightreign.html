@@ -61,20 +61,20 @@ title: Nightreign Bosses
 					<td>{{ row.nightlord | default: '' }}</td>
 					<td>{{ row.name }}</td>
 					<td>{{ row.night | default: '' }}</td>
-					<td>{% if row.standard != nil %}{{ row.standard }}%{% else %}—{% endif %}</td>
-					<td>{% if row.slash != nil %}{{ row.slash }}%{% else %}—{% endif %}</td>
-					<td>{% if row.strike != nil %}{{ row.strike }}%{% else %}—{% endif %}</td>
-					<td>{% if row.pierce != nil %}{{ row.pierce }}%{% else %}—{% endif %}</td>
-					<td>{% if row.magic != nil %}{{ row.magic }}%{% else %}—{% endif %}</td>
-					<td>{% if row.fire != nil %}{{ row.fire }}%{% else %}—{% endif %}</td>
-					<td>{% if row.lightning != nil %}{{ row.lightning }}%{% else %}—{% endif %}</td>
-					<td>{% if row.holy != nil %}{{ row.holy }}%{% else %}—{% endif %}</td>
-					<td>{% if row.poison != nil %}{{ row.poison }}{% else %}—{% endif %}</td>
-					<td>{% if row.rot != nil %}{{ row.rot }}{% else %}—{% endif %}</td>
-					<td>{% if row.bleed != nil %}{{ row.bleed }}{% else %}—{% endif %}</td>
-					<td>{% if row.frostbite != nil %}{{ row.frostbite }}{% else %}—{% endif %}</td>
-					<td>{% if row.sleep != nil %}{{ row.sleep }}{% else %}—{% endif %}</td>
-					<td>{% if row.madness != nil %}{{ row.madness }}{% else %}—{% endif %}</td>
+					<td class="{% if row.standard == nil %}nightreign-cell-yellow{% elsif row.standard > 0 %}nightreign-cell-red{% else %}nightreign-cell-green{% endif %}">{% if row.standard != nil %}{{ row.standard }}%{% else %}—{% endif %}</td>
+					<td class="{% if row.slash == nil %}nightreign-cell-yellow{% elsif row.slash > 0 %}nightreign-cell-red{% else %}nightreign-cell-green{% endif %}">{% if row.slash != nil %}{{ row.slash }}%{% else %}—{% endif %}</td>
+					<td class="{% if row.strike == nil %}nightreign-cell-yellow{% elsif row.strike > 0 %}nightreign-cell-red{% else %}nightreign-cell-green{% endif %}">{% if row.strike != nil %}{{ row.strike }}%{% else %}—{% endif %}</td>
+					<td class="{% if row.pierce == nil %}nightreign-cell-yellow{% elsif row.pierce > 0 %}nightreign-cell-red{% else %}nightreign-cell-green{% endif %}">{% if row.pierce != nil %}{{ row.pierce }}%{% else %}—{% endif %}</td>
+					<td class="{% if row.magic == nil %}nightreign-cell-yellow{% elsif row.magic > 0 %}nightreign-cell-red{% else %}nightreign-cell-green{% endif %}">{% if row.magic != nil %}{{ row.magic }}%{% else %}—{% endif %}</td>
+					<td class="{% if row.fire == nil %}nightreign-cell-yellow{% elsif row.fire > 0 %}nightreign-cell-red{% else %}nightreign-cell-green{% endif %}">{% if row.fire != nil %}{{ row.fire }}%{% else %}—{% endif %}</td>
+					<td class="{% if row.lightning == nil %}nightreign-cell-yellow{% elsif row.lightning > 0 %}nightreign-cell-red{% else %}nightreign-cell-green{% endif %}">{% if row.lightning != nil %}{{ row.lightning }}%{% else %}—{% endif %}</td>
+					<td class="{% if row.holy == nil %}nightreign-cell-yellow{% elsif row.holy > 0 %}nightreign-cell-red{% else %}nightreign-cell-green{% endif %}">{% if row.holy != nil %}{{ row.holy }}%{% else %}—{% endif %}</td>
+					<td class="{% if row.poison == nil %}nightreign-cell-dark-red{% elsif row.poison > 500 %}nightreign-cell-red{% elsif row.poison >= 200 %}nightreign-cell-yellow{% else %}nightreign-cell-green{% endif %}">{% if row.poison != nil %}{{ row.poison }}{% else %}—{% endif %}</td>
+					<td class="{% if row.rot == nil %}nightreign-cell-dark-red{% elsif row.rot > 500 %}nightreign-cell-red{% elsif row.rot >= 200 %}nightreign-cell-yellow{% else %}nightreign-cell-green{% endif %}">{% if row.rot != nil %}{{ row.rot }}{% else %}—{% endif %}</td>
+					<td class="{% if row.bleed == nil %}nightreign-cell-dark-red{% elsif row.bleed > 500 %}nightreign-cell-red{% elsif row.bleed >= 200 %}nightreign-cell-yellow{% else %}nightreign-cell-green{% endif %}">{% if row.bleed != nil %}{{ row.bleed }}{% else %}—{% endif %}</td>
+					<td class="{% if row.frostbite == nil %}nightreign-cell-dark-red{% elsif row.frostbite > 500 %}nightreign-cell-red{% elsif row.frostbite >= 200 %}nightreign-cell-yellow{% else %}nightreign-cell-green{% endif %}">{% if row.frostbite != nil %}{{ row.frostbite }}{% else %}—{% endif %}</td>
+					<td class="{% if row.sleep == nil %}nightreign-cell-dark-red{% elsif row.sleep > 500 %}nightreign-cell-red{% elsif row.sleep >= 200 %}nightreign-cell-yellow{% else %}nightreign-cell-green{% endif %}">{% if row.sleep != nil %}{{ row.sleep }}{% else %}—{% endif %}</td>
+					<td class="{% if row.madness == nil %}nightreign-cell-dark-red{% elsif row.madness > 500 %}nightreign-cell-red{% elsif row.madness >= 200 %}nightreign-cell-yellow{% else %}nightreign-cell-green{% endif %}">{% if row.madness != nil %}{{ row.madness }}{% else %}—{% endif %}</td>
 				</tr>
 				{% endfor %}
 			</tbody>
