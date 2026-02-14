@@ -1,6 +1,21 @@
 (function () {
 	var select = document.getElementById('nightreign-nightlord');
 	var table = document.querySelector('.nightreign-table');
+
+	// Protanopia-friendly colors toggle (runs first so it works even if other setup returns early)
+	var protanopiaCheckbox = document.getElementById('nightreign-protanopia');
+	if (protanopiaCheckbox && document.body) {
+		var saved = localStorage.getItem('nightreignProtanopia');
+		if (saved === 'true') {
+			protanopiaCheckbox.checked = true;
+			document.body.classList.add('nightreign-protanopia');
+		}
+		protanopiaCheckbox.addEventListener('change', function () {
+			document.body.classList.toggle('nightreign-protanopia', protanopiaCheckbox.checked);
+			localStorage.setItem('nightreignProtanopia', protanopiaCheckbox.checked);
+		});
+	}
+
 	if (!select || !table) return;
 
 	function isHeaderRow(row) {
@@ -224,18 +239,4 @@
 	select.addEventListener('change', filter);
 	// Run filter once so initial view (including section headers) is correct on first paint
 	filter();
-
-	// Protanopia-friendly colors toggle (persisted in localStorage)
-	var protanopiaCheckbox = document.getElementById('nightreign-protanopia');
-	if (protanopiaCheckbox && document.body) {
-		var saved = localStorage.getItem('nightreignProtanopia');
-		if (saved === 'true') {
-			protanopiaCheckbox.checked = true;
-			document.body.classList.add('nightreign-protanopia');
-		}
-		protanopiaCheckbox.addEventListener('change', function () {
-			document.body.classList.toggle('nightreign-protanopia', protanopiaCheckbox.checked);
-			localStorage.setItem('nightreignProtanopia', protanopiaCheckbox.checked);
-		});
-	}
 })();
