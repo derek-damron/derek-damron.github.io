@@ -240,3 +240,69 @@ body.nightreign-protanopia .nightreign-table tbody td.nightreign-cell-dark-red {
 	margin-top: 0.25rem;
 	color: #555;
 }
+
+/* Surface map with crystal indicators */
+.nightreign-surface-map {
+	margin-top: 2rem;
+}
+
+.nightreign-surface-map-inner {
+	position: relative;
+	display: inline-block;
+}
+
+.nightreign-surface-map-inner img {
+	display: block;
+	max-width: 100%;
+	height: auto;
+}
+
+.nightreign-surface-map-overlay {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	pointer-events: none;
+}
+
+.nightreign-surface-map-overlay .nightreign-crystal-indicator {
+	pointer-events: auto;
+}
+
+.nightreign-crystal-indicator {
+	position: absolute;
+	width: 2.5%;
+	height: auto;
+	aspect-ratio: 1;
+	border-radius: 50%;
+	border: none;
+	padding: 0;
+	cursor: pointer;
+	background: #ffc107;
+	transform: translate(-50%, -50%);
+}
+
+.nightreign-crystal-indicator:focus {
+	outline: 2px solid #0066cc;
+	outline-offset: 2px;
+}
+
+.nightreign-crystal-indicator .nightreign-crystal-indicator-dot {
+	display: block;
+	width: 100%;
+	height: 100%;
+	border-radius: 50%;
+}
+
+.nightreign-crystal-indicator.state-inactive {
+	background: #dc3545;
+}
+
+.nightreign-crystal-indicator.state-possible {
+	background: #ffc107;
+}
+
+.nightreign-crystal-indicator.state-active {
+	background: #28a745;
+}

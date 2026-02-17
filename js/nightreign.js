@@ -16,6 +16,157 @@
 		});
 	}
 
+	// Surface map crystal indicators (runs regardless of table/select)
+	(function () {
+		var nightreignSurfaceMapPoints = [
+			{ id: '1', label: 'Crystal 1', left: 14.34, top: 38.69 },
+			{ id: '2', label: 'Crystal 2', left: 7.43, top: 57.84 },
+			{ id: '3', label: 'Crystal 3', left: 19.35, top: 55.95 },
+			{ id: '4', label: 'Crystal 4', left: 28.26, top: 80.22 },
+			{ id: '5', label: 'Crystal 5', left: 39.28, top: 84.12 },
+			{ id: '6', label: 'Crystal 6', left: 51.98, top: 65.97 },
+			{ id: '7', label: 'Crystal 7', left: 33.71, top: 58.06 },
+			{ id: '8', label: 'Crystal 8', left: 43.51, top: 51.05 },
+			{ id: '9', label: 'Crystal 9', left: 38.50, top: 36.90 },
+			{ id: '10', label: 'Crystal 10', left: 30.60, top: 31.34 },
+			{ id: '11', label: 'Crystal 11', left: 42.85, top: 14.19 },
+			{ id: '12', label: 'Crystal 12', left: 55.87, top: 30.78 },
+			{ id: '13', label: 'Crystal 13', left: 73.36, top: 34.57 },
+			{ id: '14', label: 'Crystal 14', left: 85.94, top: 34.68 },
+			{ id: '15', label: 'Crystal 15', left: 82.60, top: 12.52 }
+		];
+		var overlay = document.querySelector('.nightreign-surface-map-overlay');
+		if (!overlay) return;
+		var states = ['inactive', 'possible', 'active'];
+		var storageKey = 'nightreignSurfaceMapCrystals';
+		var legacyKey = 'nightreignSurfaceMapCrystalD';
+
+		// Overlapping groups: boundary crystals (4, 8, 12) belong to two groups
+		var crystalGroups = {
+			A: ['1', '5', '6', '7', '9', '13'],
+			B: ['3', '4', '7', '10', '11', '13'],
+			C: ['1', '4', '8', '10', '15'],
+			D: ['2', '8', '9', '12', '14']
+		};
+
+		function getIdsToSync(id) {
+			var seen = {};
+			var groupName;
+			for (groupName in crystalGroups) {
+				if (crystalGroups[groupName].indexOf(id) !== -1) {
+					crystalGroups[groupName].forEach(function (gid) { seen[gid] = true; });
+				}
+			}
+			return Object.keys(seen);
+		}
+
+		function loadState() {
+			var raw = localStorage.getItem(storageKey);
+			var obj = {};
+			if (raw) {
+				try {
+					obj = JSON.parse(raw);
+				} catch (e) {}
+			}
+			// Migrate legacy single key for D
+			var legacy = localStorage.getItem(legacyKey);
+			if (legacy && states.indexOf(legacy) !== -1) {
+				obj.D = legacy;
+				localStorage.removeItem(legacyKey);
+				localStorage.setItem(storageKey, JSON.stringify(obj));
+			}
+			return obj;
+		}
+
+		function saveState(obj) {
+			localStorage.setItem(storageKey, JSON.stringify(obj));
+		}
+
+		function stateName(state) {
+			return state.charAt(0).toUpperCase() + state.slice(1);
+		}
+
+		function updateButton(btn, id, label, state) {
+			var name = stateName(state);
+			btn.className = 'nightreign-crystal-indicator state-' + state;
+			btn.setAttribute('aria-label', label + ' indicator: ' + name + '. Left-click move left, right-click move right.');
+			btn.setAttribute('title', 'Left-click: move left. Right-click: move right. Current: ' + name + '.');
+		}
+
+		function applyStateToCrystal(id, state) {
+			var point = nightreignSurfaceMapPoints.find(function (p) { return p.id === id; });
+			if (!point) return;
+			var btn = overlay.querySelector('.nightreign-crystal-indicator[data-id="' + id + '"]');
+			if (!btn) return;
+			stateById[id] = state;
+			updateButton(btn, id, point.label, state);
+		}
+
+		var stateById = loadState();
+
+		// On page load, reset all crystals to possible
+		nightreignSurfaceMapPoints.forEach(function (point) {
+			stateById[point.id] = 'possible';
+		});
+
+		nightreignSurfaceMapPoints.forEach(function (point) {
+			var id = point.id;
+			var label = point.label;
+			var state = stateById[id];
+			if (!state || states.indexOf(state) === -1) state = 'possible';
+			stateById[id] = state;
+
+			var btn = document.createElement('button');
+			btn.type = 'button';
+			btn.className = 'nightreign-crystal-indicator state-' + state;
+			btn.setAttribute('data-id', id);
+			btn.style.left = point.left + '%';
+			btn.style.top = point.top + '%';
+			btn.setAttribute('aria-label', label + ' indicator: ' + stateName(state) + '. Left-click move left, right-click move right.');
+			btn.setAttribute('title', 'Left-click: move left. Right-click: move right. Current: ' + stateName(state) + '.');
+
+			var dot = document.createElement('span');
+			dot.className = 'nightreign-crystal-indicator-dot';
+			btn.appendChild(dot);
+
+			overlay.appendChild(btn);
+		});
+
+		saveState(stateById);
+
+		overlay.addEventListener('click', function (e) {
+			var btn = e.target && e.target.closest('.nightreign-crystal-indicator');
+			if (!btn) return;
+			e.preventDefault();
+			var id = btn.getAttribute('data-id');
+			var point = nightreignSurfaceMapPoints.find(function (p) { return p.id === id; });
+			if (!point) return;
+			var state = stateById[id];
+			var idx = states.indexOf(state);
+			if (idx <= 0) return;
+			var newState = states[idx - 1];
+			var idsToSync = getIdsToSync(id);
+			idsToSync.forEach(function (syncId) { applyStateToCrystal(syncId, newState); });
+			saveState(stateById);
+		});
+
+		overlay.addEventListener('contextmenu', function (e) {
+			var btn = e.target && e.target.closest('.nightreign-crystal-indicator');
+			if (!btn) return;
+			e.preventDefault();
+			var id = btn.getAttribute('data-id');
+			var point = nightreignSurfaceMapPoints.find(function (p) { return p.id === id; });
+			if (!point) return;
+			var state = stateById[id];
+			var idx = states.indexOf(state);
+			if (idx >= 2) return;
+			var newState = states[idx + 1];
+			var idsToSync = getIdsToSync(id);
+			idsToSync.forEach(function (syncId) { applyStateToCrystal(syncId, newState); });
+			saveState(stateById);
+		});
+	})();
+
 	if (!select || !table) return;
 
 	function isHeaderRow(row) {
