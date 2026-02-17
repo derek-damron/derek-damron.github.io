@@ -68,12 +68,12 @@
 	var selectedBoss = '';
 	var isDropdownOpen = false;
 
-	// Build unique boss options from NIGHT 1 and NIGHT 2 data rows only
+	// Build unique boss options from Night 1 and Night 2 data rows only
 	var bosses = [];
 	dataRows.forEach(function (row) {
 		var night = row.getAttribute('data-night') || '';
 		var name = row.getAttribute('data-name') || '';
-		if ((night === 'NIGHT 1' || night === 'NIGHT 2') && name && bosses.indexOf(name) === -1) {
+		if ((night === 'Night 1' || night === 'Night 2') && name && bosses.indexOf(name) === -1) {
 			bosses.push(name);
 		}
 	});

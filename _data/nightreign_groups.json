@@ -1,13 +1,80 @@
 [
-  { "id": "DEMON PRINCE", "names": ["DEMON IN PAIN", "DEMON FROM BELOW"] },
-  { "id": "CURSEBLADE_DIVINE_BEAST_WARRIOR", "names": ["CURSEBLADE", "DIVINE BEAST WARRIOR"] },
-  { "id": "DEMI_HUMAN_QUEEN_SWORDMASTER", "names": ["DEMI-HUMAN QUEEN", "DEMI-HUMAN SWORDMASTER"] },
-  { "id": "TREE_SENTINEL_ROYAL_CAVALRY", "names": ["TREE SENTINEL", "ROYAL CAVALRY"] },
-  { "id": "GOLDEN_HIPPO_CRUCIBLE_KNIGHT", "names": ["CRUCIBLE KNIGHT", "GOLDEN HIPPO"] },
-  { "id": "GODSKIN_NOBLE_APOSTLE", "names": ["GODSKIN NOBLE", "GODSKIN APOSTLE"] },
-  { "id": "HEOLSTER", "names": ["HEOLSTER (PHASE 1)", "HEOLSTER (PHASE 2)"] },
-  { "id": "T. STRAGHESS", "names": ["T. STRAGHESS (PHASE 1)", "T. STRAGHESS (PHASE 2)"] },
-  { "id": "DRACO_TREE_SENTINEL_ROYAL_CAVALRY", "names": ["DRACO. TREE SENTINEL", "ROYAL CAVALRY"] },
-  { "id": "KING_OF_THE_STORM_NAMELESS_KING", "names": ["KING OF THE STORM", "NAMELESS KING"] },
-  { "id": "GNOSTER_FAURTIS_ANIMUS", "names": ["GNOSTER (MOTH)", "FAURTIS (SCORPION)", "ANIMUS"] }
+  {
+    "id": "Demon Prince",
+    "names": [
+      "Demon In Pain",
+      "Demon From Below"
+    ]
+  },
+  {
+    "id": "Curseblade_Divine_Beast_Warrior",
+    "names": [
+      "Curseblade",
+      "Divine Beast Warrior"
+    ]
+  },
+  {
+    "id": "Demi_Human_Queen_Swordmaster",
+    "names": [
+      "Demi-Human Queen",
+      "Demi-Human Swordmaster"
+    ]
+  },
+  {
+    "id": "Tree_Sentinel_Royal_Cavalry",
+    "names": [
+      "Tree Sentinel",
+      "Royal Cavalry"
+    ]
+  },
+  {
+    "id": "Golden_Hippo_Crucible_Knight",
+    "names": [
+      "Crucible Knight",
+      "Golden Hippo"
+    ]
+  },
+  {
+    "id": "Godskin_Noble_Apostle",
+    "names": [
+      "Godskin Noble",
+      "Godskin Apostle"
+    ]
+  },
+  {
+    "id": "Heolster",
+    "names": [
+      "Heolster (Phase 1)",
+      "Heolster (Phase 2)"
+    ]
+  },
+  {
+    "id": "T. Straghess",
+    "names": [
+      "T. Straghess (Phase 1)",
+      "T. Straghess (Phase 2)"
+    ]
+  },
+  {
+    "id": "Draco_Tree_Sentinel_Royal_Cavalry",
+    "names": [
+      "Draco. Tree Sentinel",
+      "Royal Cavalry"
+    ]
+  },
+  {
+    "id": "King_Of_The_Storm_Nameless_King",
+    "names": [
+      "King Of The Storm",
+      "Nameless King"
+    ]
+  },
+  {
+    "id": "Gnoster_Faurtis_Animus",
+    "names": [
+      "Gnoster (Moth)",
+      "Faurtis (Scorpion)",
+      "Animus"
+    ]
+  }
 ]

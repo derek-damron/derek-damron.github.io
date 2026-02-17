@@ -63,16 +63,16 @@ title: Nightreign Bosses
 				{% assign prev_nightlord = '' %}
 				{% assign prev_group = '' %}
 				{% for row in site.data.nightreign %}
-				{% if row.night == 'NIGHTLORD' %}
+				{% if row.night == 'Nightlord' %}
 					{% if prev_nightlord != row.nightlord %}
-				<tr class="nightreign-night-header hidden" data-nightlord="{{ row.nightlord | default: '' }}" data-night="NIGHTLORD">
+				<tr class="nightreign-night-header hidden" data-nightlord="{{ row.nightlord | default: '' }}" data-night="Nightlord">
 					<td colspan="16">Nightlord</td>
 				</tr>
 					{% endif %}
-				{% elsif row.night == 'NIGHT 1' or row.night == 'NIGHT 2' %}
+				{% elsif row.night == 'Night 1' or row.night == 'Night 2' %}
 					{% if prev_night != row.night or prev_nightlord != row.nightlord %}
 				<tr class="nightreign-night-header hidden" data-nightlord="{{ row.nightlord | default: '' }}" data-night="{{ row.night | default: '' }}">
-					<td colspan="16">{% if row.night == 'NIGHT 1' %}Night 1{% elsif row.night == 'NIGHT 2' %}Night 2{% else %}{{ row.night }}{% endif %}</td>
+					<td colspan="16">{% if row.night == 'Night 1' %}Night 1{% elsif row.night == 'Night 2' %}Night 2{% else %}{{ row.night }}{% endif %}</td>
 				</tr>
 					{% endif %}
 				{% endif %}

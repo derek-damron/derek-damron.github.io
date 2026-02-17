@@ -10,9 +10,9 @@ Do the following:
    - **Columns**: Standard, Slash, Strike, Pierce, Magic, Fire, Lightning, Holy (damage %), then Poison, Rot, Bleed, Frostbite, Sleep, Madness (status buildup or immune).
    - **Damage cells**: Positive % = vulnerability (e.g. `20`), negative % = resistance (e.g. `-10`), empty or “-” = `null`.
    - **Status cells**: Number = buildup threshold (e.g. `154`, `252`); “-” or immune = `null`.
-   - **Rows**: The first data row is usually the **NIGHTLORD** (`night: "NIGHTLORD"`, `nightlord` = that boss’s name). Then section headers **NIGHT 1** and **NIGHT 2**; each following row is a boss with `night: "NIGHT 1"` or `night: "NIGHT 2"` and `nightlord` set to the night lord’s name.
+   - **Rows**: The first data row is usually the **Nightlord** (`night: "Nightlord"`, `nightlord` = that boss’s name). Then section headers **Night 1** and **Night 2**; each following row is a boss with `night: "Night 1"` or `night: "Night 2"` and `nightlord` set to the night lord’s name.
 
-3. **Output format**: Use the same property names and types as in `nightreign.json`: integers for percentages and buildup, `null` for missing/immune/not applicable. Normalize boss names (e.g. trim “GOLDEN HIPPO.” to “GOLDEN HIPPO”).
+3. **Output format**: Use the same property names and types as in `nightreign.json`: integers for percentages and buildup, `null` for missing/immune/not applicable. Use proper case for all string values (e.g. trim “GOLDEN HIPPO.” to “GOLDEN HIPPO”).
 
 4. **Append to the data file**: Add the extracted entries to `_data/nightreign.json` (merge into the existing JSON array). Do **not** create a standalone JSON file unless I ask for one.
 

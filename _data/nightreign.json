@@ -1,8 +1,8 @@
 [
   {
-    "name": "GLADIUS",
-    "nightlord": "GLADIUS",
-    "night": "NIGHTLORD",
+    "name": "Gladius",
+    "nightlord": "Gladius",
+    "night": "Nightlord",
     "standard": null,
     "slash": null,
     "strike": null,
@@ -19,10 +19,10 @@
     "madness": null
   },
   {
-    "name": "DEMI-HUMAN QUEEN",
-    "nightlord": "GLADIUS",
-    "night": "NIGHT 1",
-    "group": "DEMI_HUMAN_QUEEN_SWORDMASTER",
+    "name": "Demi-Human Queen",
+    "nightlord": "Gladius",
+    "night": "Night 1",
+    "group": "Demi_Human_Queen_Swordmaster",
     "standard": null,
     "slash": -10,
     "strike": null,
@@ -39,10 +39,10 @@
     "madness": null
   },
   {
-    "name": "DEMI-HUMAN SWORDMASTER",
-    "nightlord": "GLADIUS",
-    "night": "NIGHT 1",
-    "group": "DEMI_HUMAN_QUEEN_SWORDMASTER",
+    "name": "Demi-Human Swordmaster",
+    "nightlord": "Gladius",
+    "night": "Night 1",
+    "group": "Demi_Human_Queen_Swordmaster",
     "standard": null,
     "slash": -20,
     "strike": null,
@@ -59,9 +59,9 @@
     "madness": null
   },
   {
-    "name": "BELL BEARING HUNTER",
-    "nightlord": "GLADIUS",
-    "night": "NIGHT 1",
+    "name": "Bell Bearing Hunter",
+    "nightlord": "Gladius",
+    "night": "Night 1",
     "standard": 35,
     "slash": 35,
     "strike": 35,
@@ -78,9 +78,9 @@
     "madness": null
   },
   {
-    "name": "FELL OMEN",
-    "nightlord": "GLADIUS",
-    "night": "NIGHT 2",
+    "name": "Fell Omen",
+    "nightlord": "Gladius",
+    "night": "Night 2",
     "standard": null,
     "slash": -10,
     "strike": null,
@@ -97,10 +97,10 @@
     "madness": null
   },
   {
-    "name": "TREE SENTINEL",
-    "nightlord": "GLADIUS",
-    "night": "NIGHT 2",
-    "group": "TREE_SENTINEL_ROYAL_CAVALRY",
+    "name": "Tree Sentinel",
+    "nightlord": "Gladius",
+    "night": "Night 2",
+    "group": "Tree_Sentinel_Royal_Cavalry",
     "standard": 10,
     "slash": 35,
     "strike": 10,
@@ -117,10 +117,10 @@
     "madness": null
   },
   {
-    "name": "ROYAL CAVALRY",
-    "nightlord": "GLADIUS",
-    "night": "NIGHT 2",
-    "group": "TREE_SENTINEL_ROYAL_CAVALRY",
+    "name": "Royal Cavalry",
+    "nightlord": "Gladius",
+    "night": "Night 2",
+    "group": "Tree_Sentinel_Royal_Cavalry",
     "standard": 10,
     "slash": 35,
     "strike": 10,
@@ -137,9 +137,9 @@
     "madness": null
   },
   {
-    "name": "ADEL",
-    "nightlord": "ADEL",
-    "night": "NIGHTLORD",
+    "name": "Adel",
+    "nightlord": "Adel",
+    "night": "Nightlord",
     "standard": null,
     "slash": null,
     "strike": null,
@@ -156,9 +156,9 @@
     "madness": null
   },
   {
-    "name": "DUKE'S DEAR FREJA",
-    "nightlord": "ADEL",
-    "night": "NIGHT 1",
+    "name": "Duke's Dear Freja",
+    "nightlord": "Adel",
+    "night": "Night 1",
     "standard": 16,
     "slash": 7,
     "strike": -10,
@@ -175,9 +175,9 @@
     "madness": null
   },
   {
-    "name": "GAPING DRAGON",
-    "nightlord": "ADEL",
-    "night": "NIGHT 1",
+    "name": "Gaping Dragon",
+    "nightlord": "Adel",
+    "night": "Night 1",
     "standard": null,
     "slash": null,
     "strike": null,
@@ -194,9 +194,9 @@
     "madness": null
   },
   {
-    "name": "NIGHT'S CAVALRY",
-    "nightlord": "ADEL",
-    "night": "NIGHT 1",
+    "name": "Night's Cavalry",
+    "nightlord": "Adel",
+    "night": "Night 1",
     "standard": 35,
     "slash": 35,
     "strike": 35,
@@ -213,9 +213,9 @@
     "madness": null
   },
   {
-    "name": "VALIANT GARGOYLE",
-    "nightlord": "ADEL",
-    "night": "NIGHT 1",
+    "name": "Valiant Gargoyle",
+    "nightlord": "Adel",
+    "night": "Night 1",
     "standard": 10,
     "slash": 35,
     "strike": null,
@@ -232,9 +232,9 @@
     "madness": null
   },
   {
-    "name": "WORMFACE",
-    "nightlord": "ADEL",
-    "night": "NIGHT 1",
+    "name": "Wormface",
+    "nightlord": "Adel",
+    "night": "Night 1",
     "standard": null,
     "slash": -10,
     "strike": null,
@@ -251,9 +251,9 @@
     "madness": null
   },
   {
-    "name": "ANCIENT DRAGON",
-    "nightlord": "ADEL",
-    "night": "NIGHT 2",
+    "name": "Ancient Dragon",
+    "nightlord": "Adel",
+    "night": "Night 2",
     "standard": 35,
     "slash": 35,
     "strike": 35,
@@ -270,9 +270,9 @@
     "madness": null
   },
   {
-    "name": "OUTLAND COMMANDER",
-    "nightlord": "ADEL",
-    "night": "NIGHT 2",
+    "name": "Outland Commander",
+    "nightlord": "Adel",
+    "night": "Night 2",
     "standard": 10,
     "slash": 35,
     "strike": 10,
@@ -289,10 +289,10 @@
     "madness": null
   },
   {
-    "name": "CRUCIBLE KNIGHT",
-    "nightlord": "ADEL",
-    "night": "NIGHT 2",
-    "group": "GOLDEN_HIPPO_CRUCIBLE_KNIGHT",
+    "name": "Crucible Knight",
+    "nightlord": "Adel",
+    "night": "Night 2",
+    "group": "Golden_Hippo_Crucible_Knight",
     "standard": 35,
     "slash": 35,
     "strike": 35,
@@ -309,10 +309,10 @@
     "madness": null
   },
   {
-    "name": "GOLDEN HIPPO",
-    "nightlord": "ADEL",
-    "night": "NIGHT 2",
-    "group": "GOLDEN_HIPPO_CRUCIBLE_KNIGHT",
+    "name": "Golden Hippo",
+    "nightlord": "Adel",
+    "night": "Night 2",
+    "group": "Golden_Hippo_Crucible_Knight",
     "standard": null,
     "slash": -10,
     "strike": null,
@@ -329,10 +329,10 @@
     "madness": null
   },
   {
-    "name": "GNOSTER (MOTH)",
-    "nightlord": "GNOSTER",
-    "night": "NIGHTLORD",
-    "group": "GNOSTER_FAURTIS_ANIMUS",
+    "name": "Gnoster (Moth)",
+    "nightlord": "Gnoster",
+    "night": "Nightlord",
+    "group": "Gnoster_Faurtis_Animus",
     "standard": -15,
     "slash": -25,
     "strike": -15,
@@ -349,10 +349,10 @@
     "madness": null
   },
   {
-    "name": "FAURTIS (SCORPION)",
-    "nightlord": "GNOSTER",
-    "night": "NIGHTLORD",
-    "group": "GNOSTER_FAURTIS_ANIMUS",
+    "name": "Faurtis (Scorpion)",
+    "nightlord": "Gnoster",
+    "night": "Nightlord",
+    "group": "Gnoster_Faurtis_Animus",
     "standard": 10,
     "slash": 20,
     "strike": -20,
@@ -369,10 +369,10 @@
     "madness": null
   },
   {
-    "name": "ANIMUS",
-    "nightlord": "GNOSTER",
-    "night": "NIGHTLORD",
-    "group": "GNOSTER_FAURTIS_ANIMUS",
+    "name": "Animus",
+    "nightlord": "Gnoster",
+    "night": "Nightlord",
+    "group": "Gnoster_Faurtis_Animus",
     "standard": null,
     "slash": null,
     "strike": null,
@@ -389,9 +389,9 @@
     "madness": null
   },
   {
-    "name": "BATTLEFIELD COMMANDER",
-    "nightlord": "GNOSTER",
-    "night": "NIGHT 1",
+    "name": "Battlefield Commander",
+    "nightlord": "Gnoster",
+    "night": "Night 1",
     "standard": 10,
     "slash": 35,
     "strike": 10,
@@ -408,9 +408,9 @@
     "madness": null
   },
   {
-    "name": "CENTIPEDE DEMON",
-    "nightlord": "GNOSTER",
-    "night": "NIGHT 1",
+    "name": "Centipede Demon",
+    "nightlord": "Gnoster",
+    "night": "Night 1",
     "standard": null,
     "slash": null,
     "strike": -10,
@@ -427,9 +427,9 @@
     "madness": null
   },
   {
-    "name": "SMELTER DEMON",
-    "nightlord": "GNOSTER",
-    "night": "NIGHT 1",
+    "name": "Smelter Demon",
+    "nightlord": "Gnoster",
+    "night": "Night 1",
     "standard": -10,
     "slash": 6,
     "strike": -10,
@@ -446,9 +446,9 @@
     "madness": null
   },
   {
-    "name": "TIBIA MARINER",
-    "nightlord": "GNOSTER",
-    "night": "NIGHT 1",
+    "name": "Tibia Mariner",
+    "nightlord": "Gnoster",
+    "night": "Night 1",
     "standard": 10,
     "slash": 10,
     "strike": -40,
@@ -465,10 +465,10 @@
     "madness": null
   },
   {
-    "name": "DRACO. TREE SENTINEL",
-    "nightlord": "GNOSTER",
-    "night": "NIGHT 2",
-    "group": "DRACO_TREE_SENTINEL_ROYAL_CAVALRY",
+    "name": "Draco. Tree Sentinel",
+    "nightlord": "Gnoster",
+    "night": "Night 2",
+    "group": "Draco_Tree_Sentinel_Royal_Cavalry",
     "standard": 10,
     "slash": 35,
     "strike": 10,
@@ -485,10 +485,10 @@
     "madness": null
   },
   {
-    "name": "ROYAL CAVALRY",
-    "nightlord": "GNOSTER",
-    "night": "NIGHT 2",
-    "group": "DRACO_TREE_SENTINEL_ROYAL_CAVALRY",
+    "name": "Royal Cavalry",
+    "nightlord": "Gnoster",
+    "night": "Night 2",
+    "group": "Draco_Tree_Sentinel_Royal_Cavalry",
     "standard": 10,
     "slash": 35,
     "strike": 10,
@@ -505,9 +505,9 @@
     "madness": null
   },
   {
-    "name": "GREAT WYRM",
-    "nightlord": "GNOSTER",
-    "night": "NIGHT 2",
+    "name": "Great Wyrm",
+    "nightlord": "Gnoster",
+    "night": "Night 2",
     "standard": 10,
     "slash": 35,
     "strike": 10,
@@ -524,9 +524,9 @@
     "madness": null
   },
   {
-    "name": "NOX DRAGONKIN",
-    "nightlord": "GNOSTER",
-    "night": "NIGHT 2",
+    "name": "Nox Dragonkin",
+    "nightlord": "Gnoster",
+    "night": "Night 2",
     "standard": 10,
     "slash": null,
     "strike": 10,
@@ -543,9 +543,9 @@
     "madness": null
   },
   {
-    "name": "MARIS",
-    "nightlord": "MARIS",
-    "night": "NIGHTLORD",
+    "name": "Maris",
+    "nightlord": "Maris",
+    "night": "Nightlord",
     "standard": null,
     "slash": -15,
     "strike": 20,
@@ -562,9 +562,9 @@
     "madness": null
   },
   {
-    "name": "GAPING DRAGON",
-    "nightlord": "MARIS",
-    "night": "NIGHT 1",
+    "name": "Gaping Dragon",
+    "nightlord": "Maris",
+    "night": "Night 1",
     "standard": null,
     "slash": null,
     "strike": null,
@@ -581,9 +581,9 @@
     "madness": null
   },
   {
-    "name": "GRAFTED MONARCH",
-    "nightlord": "MARIS",
-    "night": "NIGHT 1",
+    "name": "Grafted Monarch",
+    "nightlord": "Maris",
+    "night": "Night 1",
     "standard": null,
     "slash": null,
     "strike": null,
@@ -600,9 +600,9 @@
     "madness": null
   },
   {
-    "name": "SMELTER DEMON",
-    "nightlord": "MARIS",
-    "night": "NIGHT 1",
+    "name": "Smelter Demon",
+    "nightlord": "Maris",
+    "night": "Night 1",
     "standard": -10,
     "slash": 6,
     "strike": -10,
@@ -619,9 +619,9 @@
     "madness": null
   },
   {
-    "name": "VALIANT GARGOYLE",
-    "nightlord": "MARIS",
-    "night": "NIGHT 1",
+    "name": "Valiant Gargoyle",
+    "nightlord": "Maris",
+    "night": "Night 1",
     "standard": 10,
     "slash": 35,
     "strike": null,
@@ -638,9 +638,9 @@
     "madness": null
   },
   {
-    "name": "WORMFACE",
-    "nightlord": "MARIS",
-    "night": "NIGHT 1",
+    "name": "Wormface",
+    "nightlord": "Maris",
+    "night": "Night 1",
     "standard": null,
     "slash": -10,
     "strike": null,
@@ -657,10 +657,10 @@
     "madness": null
   },
   {
-    "name": "GODSKIN NOBLE",
-    "nightlord": "MARIS",
-    "night": "NIGHT 2",
-    "group": "GODSKIN_NOBLE_APOSTLE",
+    "name": "Godskin Noble",
+    "nightlord": "Maris",
+    "night": "Night 2",
+    "group": "Godskin_Noble_Apostle",
     "standard": null,
     "slash": -10,
     "strike": 35,
@@ -677,10 +677,10 @@
     "madness": null
   },
   {
-    "name": "GODSKIN APOSTLE",
-    "nightlord": "MARIS",
-    "night": "NIGHT 2",
-    "group": "GODSKIN_NOBLE_APOSTLE",
+    "name": "Godskin Apostle",
+    "nightlord": "Maris",
+    "night": "Night 2",
+    "group": "Godskin_Noble_Apostle",
     "standard": null,
     "slash": -10,
     "strike": 10,
@@ -697,9 +697,9 @@
     "madness": null
   },
   {
-    "name": "FALLINGSTAR BEAST",
-    "nightlord": "MARIS",
-    "night": "NIGHT 2",
+    "name": "Fallingstar Beast",
+    "nightlord": "Maris",
+    "night": "Night 2",
     "standard": 35,
     "slash": 35,
     "strike": 35,
@@ -716,10 +716,10 @@
     "madness": null
   },
   {
-    "name": "TREE SENTINEL",
-    "nightlord": "MARIS",
-    "night": "NIGHT 2",
-    "group": "TREE_SENTINEL_ROYAL_CAVALRY",
+    "name": "Tree Sentinel",
+    "nightlord": "Maris",
+    "night": "Night 2",
+    "group": "Tree_Sentinel_Royal_Cavalry",
     "standard": 10,
     "slash": 35,
     "strike": 10,
@@ -736,10 +736,10 @@
     "madness": null
   },
   {
-    "name": "ROYAL CAVALRY",
-    "nightlord": "MARIS",
-    "night": "NIGHT 2",
-    "group": "TREE_SENTINEL_ROYAL_CAVALRY",
+    "name": "Royal Cavalry",
+    "nightlord": "Maris",
+    "night": "Night 2",
+    "group": "Tree_Sentinel_Royal_Cavalry",
     "standard": 10,
     "slash": 35,
     "strike": 10,
@@ -756,9 +756,9 @@
     "madness": null
   },
   {
-    "name": "LIBRA",
-    "nightlord": "LIBRA",
-    "night": "NIGHTLORD",
+    "name": "Libra",
+    "nightlord": "Libra",
+    "night": "Nightlord",
     "standard": null,
     "slash": -10,
     "strike": null,
@@ -775,9 +775,9 @@
     "madness": 154
   },
   {
-    "name": "BATTLEFIELD COMMANDER",
-    "nightlord": "LIBRA",
-    "night": "NIGHT 1",
+    "name": "Battlefield Commander",
+    "nightlord": "Libra",
+    "night": "Night 1",
     "standard": 10,
     "slash": 35,
     "strike": 10,
@@ -794,9 +794,9 @@
     "madness": null
   },
   {
-    "name": "CENTIPEDE DEMON",
-    "nightlord": "LIBRA",
-    "night": "NIGHT 1",
+    "name": "Centipede Demon",
+    "nightlord": "Libra",
+    "night": "Night 1",
     "standard": null,
     "slash": null,
     "strike": -10,
@@ -813,9 +813,9 @@
     "madness": null
   },
   {
-    "name": "DUKE'S DEAR FREJA",
-    "nightlord": "LIBRA",
-    "night": "NIGHT 1",
+    "name": "Duke's Dear Freja",
+    "nightlord": "Libra",
+    "night": "Night 1",
     "standard": 16,
     "slash": 7,
     "strike": -10,
@@ -832,9 +832,9 @@
     "madness": null
   },
   {
-    "name": "ROYAL REVENANT",
-    "nightlord": "LIBRA",
-    "night": "NIGHT 1",
+    "name": "Royal Revenant",
+    "nightlord": "Libra",
+    "night": "Night 1",
     "standard": null,
     "slash": -10,
     "strike": null,
@@ -851,9 +851,9 @@
     "madness": null
   },
   {
-    "name": "TIBIA MARINER",
-    "nightlord": "LIBRA",
-    "night": "NIGHT 1",
+    "name": "Tibia Mariner",
+    "nightlord": "Libra",
+    "night": "Night 1",
     "standard": 10,
     "slash": 10,
     "strike": -40,
@@ -870,10 +870,10 @@
     "madness": null
   },
   {
-    "name": "CRUCIBLE KNIGHT",
-    "nightlord": "LIBRA",
-    "night": "NIGHT 2",
-    "group": "GOLDEN_HIPPO_CRUCIBLE_KNIGHT",
+    "name": "Crucible Knight",
+    "nightlord": "Libra",
+    "night": "Night 2",
+    "group": "Golden_Hippo_Crucible_Knight",
     "standard": 35,
     "slash": 35,
     "strike": 35,
@@ -890,10 +890,10 @@
     "madness": null
   },
   {
-    "name": "GOLDEN HIPPO",
-    "nightlord": "LIBRA",
-    "night": "NIGHT 2",
-    "group": "GOLDEN_HIPPO_CRUCIBLE_KNIGHT",
+    "name": "Golden Hippo",
+    "nightlord": "Libra",
+    "night": "Night 2",
+    "group": "Golden_Hippo_Crucible_Knight",
     "standard": null,
     "slash": -10,
     "strike": null,
@@ -910,9 +910,9 @@
     "madness": null
   },
   {
-    "name": "DEATH RITE BIRD",
-    "nightlord": "LIBRA",
-    "night": "NIGHT 2",
+    "name": "Death Rite Bird",
+    "nightlord": "Libra",
+    "night": "Night 2",
     "standard": 10,
     "slash": 10,
     "strike": -40,
@@ -929,10 +929,10 @@
     "madness": null
   },
   {
-    "name": "GODSKIN NOBLE",
-    "nightlord": "LIBRA",
-    "night": "NIGHT 2",
-    "group": "GODSKIN_NOBLE_APOSTLE",
+    "name": "Godskin Noble",
+    "nightlord": "Libra",
+    "night": "Night 2",
+    "group": "Godskin_Noble_Apostle",
     "standard": null,
     "slash": -10,
     "strike": 35,
@@ -949,10 +949,10 @@
     "madness": null
   },
   {
-    "name": "GODSKIN APOSTLE",
-    "nightlord": "LIBRA",
-    "night": "NIGHT 2",
-    "group": "GODSKIN_NOBLE_APOSTLE",
+    "name": "Godskin Apostle",
+    "nightlord": "Libra",
+    "night": "Night 2",
+    "group": "Godskin_Noble_Apostle",
     "standard": null,
     "slash": -10,
     "strike": 10,
@@ -969,9 +969,9 @@
     "madness": null
   },
   {
-    "name": "FULGHOR",
-    "nightlord": "FULGHOR",
-    "night": "NIGHTLORD",
+    "name": "Fulghor",
+    "nightlord": "Fulghor",
+    "night": "Nightlord",
     "standard": null,
     "slash": null,
     "strike": null,
@@ -988,9 +988,9 @@
     "madness": null
   },
   {
-    "name": "CENTIPEDE DEMON",
-    "nightlord": "FULGHOR",
-    "night": "NIGHT 1",
+    "name": "Centipede Demon",
+    "nightlord": "Fulghor",
+    "night": "Night 1",
     "standard": null,
     "slash": null,
     "strike": -10,
@@ -1007,9 +1007,9 @@
     "madness": null
   },
   {
-    "name": "GAPING DRAGON",
-    "nightlord": "FULGHOR",
-    "night": "NIGHT 1",
+    "name": "Gaping Dragon",
+    "nightlord": "Fulghor",
+    "night": "Night 1",
     "standard": null,
     "slash": null,
     "strike": null,
@@ -1026,9 +1026,9 @@
     "madness": null
   },
   {
-    "name": "NIGHT'S CAVALRY",
-    "nightlord": "FULGHOR",
-    "night": "NIGHT 1",
+    "name": "Night's Cavalry",
+    "nightlord": "Fulghor",
+    "night": "Night 1",
     "standard": 35,
     "slash": 35,
     "strike": 35,
@@ -1045,9 +1045,9 @@
     "madness": null
   },
   {
-    "name": "ROYAL REVENANT",
-    "nightlord": "FULGHOR",
-    "night": "NIGHT 1",
+    "name": "Royal Revenant",
+    "nightlord": "Fulghor",
+    "night": "Night 1",
     "standard": null,
     "slash": -10,
     "strike": null,
@@ -1064,9 +1064,9 @@
     "madness": null
   },
   {
-    "name": "WORMFACE",
-    "nightlord": "FULGHOR",
-    "night": "NIGHT 1",
+    "name": "Wormface",
+    "nightlord": "Fulghor",
+    "night": "Night 1",
     "standard": null,
     "slash": -10,
     "strike": null,
@@ -1083,10 +1083,10 @@
     "madness": null
   },
   {
-    "name": "KING OF THE STORM",
-    "nightlord": "FULGHOR",
-    "night": "NIGHT 2",
-    "group": "KING_OF_THE_STORM_NAMELESS_KING",
+    "name": "King Of The Storm",
+    "nightlord": "Fulghor",
+    "night": "Night 2",
+    "group": "King_Of_The_Storm_Nameless_King",
     "standard": 20,
     "slash": 21,
     "strike": 18,
@@ -1103,10 +1103,10 @@
     "madness": null
   },
   {
-    "name": "NAMELESS KING",
-    "nightlord": "FULGHOR",
-    "night": "NIGHT 2",
-    "group": "KING_OF_THE_STORM_NAMELESS_KING",
+    "name": "Nameless King",
+    "nightlord": "Fulghor",
+    "night": "Night 2",
+    "group": "King_Of_The_Storm_Nameless_King",
     "standard": 21,
     "slash": 22,
     "strike": 19,
@@ -1123,9 +1123,9 @@
     "madness": null
   },
   {
-    "name": "NOX DRAGONKIN",
-    "nightlord": "FULGHOR",
-    "night": "NIGHT 2",
+    "name": "Nox Dragonkin",
+    "nightlord": "Fulghor",
+    "night": "Night 2",
     "standard": 10,
     "slash": null,
     "strike": 10,
@@ -1142,9 +1142,9 @@
     "madness": null
   },
   {
-    "name": "OUTLAND COMMANDER",
-    "nightlord": "FULGHOR",
-    "night": "NIGHT 2",
+    "name": "Outland Commander",
+    "nightlord": "Fulghor",
+    "night": "Night 2",
     "standard": 10,
     "slash": 35,
     "strike": 10,
@@ -1161,9 +1161,9 @@
     "madness": null
   },
   {
-    "name": "CALIGO",
-    "nightlord": "CALIGO",
-    "night": "NIGHTLORD",
+    "name": "Caligo",
+    "nightlord": "Caligo",
+    "night": "Nightlord",
     "standard": null,
     "slash": 15,
     "strike": -15,
@@ -1180,9 +1180,9 @@
     "madness": null
   },
   {
-    "name": "DUKE'S DEAR FREJA",
-    "nightlord": "CALIGO",
-    "night": "NIGHT 1",
+    "name": "Duke's Dear Freja",
+    "nightlord": "Caligo",
+    "night": "Night 1",
     "standard": 16,
     "slash": 7,
     "strike": -10,
@@ -1199,9 +1199,9 @@
     "madness": null
   },
   {
-    "name": "GRAFTED MONARCH",
-    "nightlord": "CALIGO",
-    "night": "NIGHT 1",
+    "name": "Grafted Monarch",
+    "nightlord": "Caligo",
+    "night": "Night 1",
     "standard": null,
     "slash": null,
     "strike": null,
@@ -1218,9 +1218,9 @@
     "madness": null
   },
   {
-    "name": "SMELTER DEMON",
-    "nightlord": "CALIGO",
-    "night": "NIGHT 1",
+    "name": "Smelter Demon",
+    "nightlord": "Caligo",
+    "night": "Night 1",
     "standard": -10,
     "slash": 6,
     "strike": -10,
@@ -1237,9 +1237,9 @@
     "madness": null
   },
   {
-    "name": "TIBIA MARINER",
-    "nightlord": "CALIGO",
-    "night": "NIGHT 1",
+    "name": "Tibia Mariner",
+    "nightlord": "Caligo",
+    "night": "Night 1",
     "standard": 10,
     "slash": 10,
     "strike": -40,
@@ -1256,9 +1256,9 @@
     "madness": null
   },
   {
-    "name": "ULCERATED TREE SPIRIT",
-    "nightlord": "CALIGO",
-    "night": "NIGHT 1",
+    "name": "Ulcerated Tree Spirit",
+    "nightlord": "Caligo",
+    "night": "Night 1",
     "standard": null,
     "slash": null,
     "strike": null,
@@ -1275,9 +1275,9 @@
     "madness": null
   },
   {
-    "name": "DANCER",
-    "nightlord": "CALIGO",
-    "night": "NIGHT 2",
+    "name": "Dancer",
+    "nightlord": "Caligo",
+    "night": "Night 2",
     "standard": 20,
     "slash": 22,
     "strike": 19,
@@ -1294,10 +1294,10 @@
     "madness": null
   },
   {
-    "name": "DRACO. TREE SENTINEL",
-    "nightlord": "CALIGO",
-    "night": "NIGHT 2",
-    "group": "DRACO_TREE_SENTINEL_ROYAL_CAVALRY",
+    "name": "Draco. Tree Sentinel",
+    "nightlord": "Caligo",
+    "night": "Night 2",
+    "group": "Draco_Tree_Sentinel_Royal_Cavalry",
     "standard": 10,
     "slash": 35,
     "strike": 10,
@@ -1314,10 +1314,10 @@
     "madness": null
   },
   {
-    "name": "ROYAL CAVALRY",
-    "nightlord": "CALIGO",
-    "night": "NIGHT 2",
-    "group": "DRACO_TREE_SENTINEL_ROYAL_CAVALRY",
+    "name": "Royal Cavalry",
+    "nightlord": "Caligo",
+    "night": "Night 2",
+    "group": "Draco_Tree_Sentinel_Royal_Cavalry",
     "standard": 10,
     "slash": 35,
     "strike": 10,
@@ -1334,10 +1334,10 @@
     "madness": null
   },
   {
-    "name": "GODSKIN NOBLE",
-    "nightlord": "CALIGO",
-    "night": "NIGHT 2",
-    "group": "GODSKIN_NOBLE_APOSTLE",
+    "name": "Godskin Noble",
+    "nightlord": "Caligo",
+    "night": "Night 2",
+    "group": "Godskin_Noble_Apostle",
     "standard": null,
     "slash": -10,
     "strike": 35,
@@ -1354,10 +1354,10 @@
     "madness": null
   },
   {
-    "name": "GODSKIN APOSTLE",
-    "nightlord": "CALIGO",
-    "night": "NIGHT 2",
-    "group": "GODSKIN_NOBLE_APOSTLE",
+    "name": "Godskin Apostle",
+    "nightlord": "Caligo",
+    "night": "Night 2",
+    "group": "Godskin_Noble_Apostle",
     "standard": null,
     "slash": -10,
     "strike": 10,
@@ -1374,10 +1374,10 @@
     "madness": null
   },
   {
-    "name": "HEOLSTER (PHASE 1)",
-    "nightlord": "HEOLSTER",
-    "night": "NIGHTLORD",
-    "group": "HEOLSTER",
+    "name": "Heolster (Phase 1)",
+    "nightlord": "Heolster",
+    "night": "Nightlord",
+    "group": "Heolster",
     "standard": null,
     "slash": -15,
     "strike": 10,
@@ -1394,10 +1394,10 @@
     "madness": null
   },
   {
-    "name": "HEOLSTER (PHASE 2)",
-    "nightlord": "HEOLSTER",
-    "night": "NIGHTLORD",
-    "group": "HEOLSTER",
+    "name": "Heolster (Phase 2)",
+    "nightlord": "Heolster",
+    "night": "Nightlord",
+    "group": "Heolster",
     "standard": null,
     "slash": -10,
     "strike": 10,
@@ -1414,9 +1414,9 @@
     "madness": null
   },
   {
-    "name": "BATTLEFIELD COMMANDER",
-    "nightlord": "HEOLSTER",
-    "night": "NIGHT 1",
+    "name": "Battlefield Commander",
+    "nightlord": "Heolster",
+    "night": "Night 1",
     "standard": 10,
     "slash": 35,
     "strike": 10,
@@ -1433,9 +1433,9 @@
     "madness": null
   },
   {
-    "name": "BELL BEARING HUNTER",
-    "nightlord": "HEOLSTER",
-    "night": "NIGHT 1",
+    "name": "Bell Bearing Hunter",
+    "nightlord": "Heolster",
+    "night": "Night 1",
     "standard": 35,
     "slash": 35,
     "strike": 35,
@@ -1452,9 +1452,9 @@
     "madness": null
   },
   {
-    "name": "CENTIPEDE DEMON",
-    "nightlord": "HEOLSTER",
-    "night": "NIGHT 1",
+    "name": "Centipede Demon",
+    "nightlord": "Heolster",
+    "night": "Night 1",
     "standard": null,
     "slash": null,
     "strike": -10,
@@ -1471,10 +1471,10 @@
     "madness": null
   },
   {
-    "name": "DEMI-HUMAN QUEEN",
-    "nightlord": "HEOLSTER",
-    "night": "NIGHT 1",
-    "group": "DEMI_HUMAN_QUEEN_SWORDMASTER",
+    "name": "Demi-Human Queen",
+    "nightlord": "Heolster",
+    "night": "Night 1",
+    "group": "Demi_Human_Queen_Swordmaster",
     "standard": null,
     "slash": -10,
     "strike": null,
@@ -1491,10 +1491,10 @@
     "madness": null
   },
   {
-    "name": "DEMI-HUMAN SWORDMASTER",
-    "nightlord": "HEOLSTER",
-    "night": "NIGHT 1",
-    "group": "DEMI_HUMAN_QUEEN_SWORDMASTER",
+    "name": "Demi-Human Swordmaster",
+    "nightlord": "Heolster",
+    "night": "Night 1",
+    "group": "Demi_Human_Queen_Swordmaster",
     "standard": null,
     "slash": -20,
     "strike": null,
@@ -1511,9 +1511,9 @@
     "madness": null
   },
   {
-    "name": "GAPING DRAGON",
-    "nightlord": "HEOLSTER",
-    "night": "NIGHT 1",
+    "name": "Gaping Dragon",
+    "nightlord": "Heolster",
+    "night": "Night 1",
     "standard": null,
     "slash": null,
     "strike": null,
@@ -1530,9 +1530,9 @@
     "madness": null
   },
   {
-    "name": "NIGHT'S CAVALRY",
-    "nightlord": "HEOLSTER",
-    "night": "NIGHT 1",
+    "name": "Night's Cavalry",
+    "nightlord": "Heolster",
+    "night": "Night 1",
     "standard": 35,
     "slash": 35,
     "strike": 35,
@@ -1549,9 +1549,9 @@
     "madness": null
   },
   {
-    "name": "ROYAL REVENANT",
-    "nightlord": "HEOLSTER",
-    "night": "NIGHT 1",
+    "name": "Royal Revenant",
+    "nightlord": "Heolster",
+    "night": "Night 1",
     "standard": null,
     "slash": -10,
     "strike": null,
@@ -1568,9 +1568,9 @@
     "madness": null
   },
   {
-    "name": "SMELTER DEMON",
-    "nightlord": "HEOLSTER",
-    "night": "NIGHT 1",
+    "name": "Smelter Demon",
+    "nightlord": "Heolster",
+    "night": "Night 1",
     "standard": -10,
     "slash": 6,
     "strike": -10,
@@ -1587,9 +1587,9 @@
     "madness": null
   },
   {
-    "name": "NIGHT'S CAVALRY",
-    "nightlord": "HEOLSTER",
-    "night": "NIGHT 1",
+    "name": "Night's Cavalry",
+    "nightlord": "Heolster",
+    "night": "Night 1",
     "standard": 35,
     "slash": 35,
     "strike": 35,
@@ -1606,9 +1606,9 @@
     "madness": null
   },
   {
-    "name": "VALIANT GARGOYLE",
-    "nightlord": "HEOLSTER",
-    "night": "NIGHT 1",
+    "name": "Valiant Gargoyle",
+    "nightlord": "Heolster",
+    "night": "Night 1",
     "standard": 10,
     "slash": 35,
     "strike": null,
@@ -1625,9 +1625,9 @@
     "madness": null
   },
   {
-    "name": "ANCIENT DRAGON",
-    "nightlord": "HEOLSTER",
-    "night": "NIGHT 2",
+    "name": "Ancient Dragon",
+    "nightlord": "Heolster",
+    "night": "Night 2",
     "standard": 35,
     "slash": 35,
     "strike": 35,
@@ -1644,10 +1644,10 @@
     "madness": null
   },
   {
-    "name": "CRUCIBLE KNIGHT",
-    "nightlord": "HEOLSTER",
-    "night": "NIGHT 2",
-    "group": "GOLDEN_HIPPO_CRUCIBLE_KNIGHT",
+    "name": "Crucible Knight",
+    "nightlord": "Heolster",
+    "night": "Night 2",
+    "group": "Golden_Hippo_Crucible_Knight",
     "standard": 35,
     "slash": 35,
     "strike": 35,
@@ -1664,10 +1664,10 @@
     "madness": null
   },
   {
-    "name": "GOLDEN HIPPO",
-    "nightlord": "HEOLSTER",
-    "night": "NIGHT 2",
-    "group": "GOLDEN_HIPPO_CRUCIBLE_KNIGHT",
+    "name": "Golden Hippo",
+    "nightlord": "Heolster",
+    "night": "Night 2",
+    "group": "Golden_Hippo_Crucible_Knight",
     "standard": null,
     "slash": -10,
     "strike": null,
@@ -1684,9 +1684,9 @@
     "madness": null
   },
   {
-    "name": "DANCER",
-    "nightlord": "HEOLSTER",
-    "night": "NIGHT 2",
+    "name": "Dancer",
+    "nightlord": "Heolster",
+    "night": "Night 2",
     "standard": 20,
     "slash": 22,
     "strike": 19,
@@ -1703,9 +1703,9 @@
     "madness": null
   },
   {
-    "name": "DEATH RITE BIRD",
-    "nightlord": "HEOLSTER",
-    "night": "NIGHT 2",
+    "name": "Death Rite Bird",
+    "nightlord": "Heolster",
+    "night": "Night 2",
     "standard": 10,
     "slash": 10,
     "strike": -40,
@@ -1722,10 +1722,10 @@
     "madness": null
   },
   {
-    "name": "DRACO. TREE SENTINEL",
-    "nightlord": "HEOLSTER",
-    "night": "NIGHT 2",
-    "group": "DRACO_TREE_SENTINEL_ROYAL_CAVALRY",
+    "name": "Draco. Tree Sentinel",
+    "nightlord": "Heolster",
+    "night": "Night 2",
+    "group": "Draco_Tree_Sentinel_Royal_Cavalry",
     "standard": 10,
     "slash": 35,
     "strike": 10,
@@ -1742,10 +1742,10 @@
     "madness": null
   },
   {
-    "name": "ROYAL CAVALRY",
-    "nightlord": "HEOLSTER",
-    "night": "NIGHT 2",
-    "group": "DRACO_TREE_SENTINEL_ROYAL_CAVALRY",
+    "name": "Royal Cavalry",
+    "nightlord": "Heolster",
+    "night": "Night 2",
+    "group": "Draco_Tree_Sentinel_Royal_Cavalry",
     "standard": 10,
     "slash": 35,
     "strike": 10,
@@ -1762,9 +1762,9 @@
     "madness": null
   },
   {
-    "name": "FALLINGSTAR BEAST",
-    "nightlord": "HEOLSTER",
-    "night": "NIGHT 2",
+    "name": "Fallingstar Beast",
+    "nightlord": "Heolster",
+    "night": "Night 2",
     "standard": 35,
     "slash": 35,
     "strike": 35,
@@ -1781,9 +1781,9 @@
     "madness": null
   },
   {
-    "name": "FELL OMEN",
-    "nightlord": "HEOLSTER",
-    "night": "NIGHT 2",
+    "name": "Fell Omen",
+    "nightlord": "Heolster",
+    "night": "Night 2",
     "standard": null,
     "slash": -10,
     "strike": null,
@@ -1800,9 +1800,9 @@
     "madness": null
   },
   {
-    "name": "GREAT WYRM",
-    "nightlord": "HEOLSTER",
-    "night": "NIGHT 2",
+    "name": "Great Wyrm",
+    "nightlord": "Heolster",
+    "night": "Night 2",
     "standard": 10,
     "slash": 35,
     "strike": 10,
@@ -1819,10 +1819,10 @@
     "madness": null
   },
   {
-    "name": "KING OF THE STORM",
-    "nightlord": "HEOLSTER",
-    "night": "NIGHT 2",
-    "group": "KING_OF_THE_STORM_NAMELESS_KING",
+    "name": "King Of The Storm",
+    "nightlord": "Heolster",
+    "night": "Night 2",
+    "group": "King_Of_The_Storm_Nameless_King",
     "standard": 20,
     "slash": 21,
     "strike": 18,
@@ -1839,10 +1839,10 @@
     "madness": null
   },
   {
-    "name": "NAMELESS KING",
-    "nightlord": "HEOLSTER",
-    "night": "NIGHT 2",
-    "group": "KING_OF_THE_STORM_NAMELESS_KING",
+    "name": "Nameless King",
+    "nightlord": "Heolster",
+    "night": "Night 2",
+    "group": "King_Of_The_Storm_Nameless_King",
     "standard": 21,
     "slash": 22,
     "strike": 19,
@@ -1859,9 +1859,9 @@
     "madness": null
   },
   {
-    "name": "NOX DRAGONKIN",
-    "nightlord": "HEOLSTER",
-    "night": "NIGHT 2",
+    "name": "Nox Dragonkin",
+    "nightlord": "Heolster",
+    "night": "Night 2",
     "standard": 10,
     "slash": null,
     "strike": 10,
@@ -1878,9 +1878,9 @@
     "madness": null
   },
   {
-    "name": "W. B. HARMONIA",
-    "nightlord": "W. B. HARMONIA",
-    "night": "NIGHTLORD",
+    "name": "W. B. Harmonia",
+    "nightlord": "W. B. Harmonia",
+    "night": "Nightlord",
     "standard": null,
     "slash": 8,
     "strike": -10,
@@ -1897,10 +1897,10 @@
     "madness": null
   },
   {
-    "name": "CURSEBLADE",
-    "nightlord": "W. B. HARMONIA",
-    "night": "NIGHT 1",
-    "group": "CURSEBLADE_DIVINE_BEAST_WARRIOR",
+    "name": "Curseblade",
+    "nightlord": "W. B. Harmonia",
+    "night": "Night 1",
+    "group": "Curseblade_Divine_Beast_Warrior",
     "standard": null,
     "slash": -20,
     "strike": null,
@@ -1917,10 +1917,10 @@
     "madness": null
   },
   {
-    "name": "DIVINE BEAST WARRIOR",
-    "nightlord": "W. B. HARMONIA",
-    "night": "NIGHT 1",
-    "group": "CURSEBLADE_DIVINE_BEAST_WARRIOR",
+    "name": "Divine Beast Warrior",
+    "nightlord": "W. B. Harmonia",
+    "night": "Night 1",
+    "group": "Curseblade_Divine_Beast_Warrior",
     "standard": 40,
     "slash": 40,
     "strike": 40,
@@ -1937,10 +1937,10 @@
     "madness": null
   },
   {
-    "name": "DEMON IN PAIN",
-    "nightlord": "W. B. HARMONIA",
-    "night": "NIGHT 1",
-    "group": "DEMON PRINCE",
+    "name": "Demon In Pain",
+    "nightlord": "W. B. Harmonia",
+    "night": "Night 1",
+    "group": "Demon Prince",
     "standard": null,
     "slash": -18,
     "strike": 1,
@@ -1957,10 +1957,10 @@
     "madness": null
   },
   {
-    "name": "DEMON FROM BELOW",
-    "nightlord": "W. B. HARMONIA",
-    "night": "NIGHT 1",
-    "group": "DEMON PRINCE",
+    "name": "Demon From Below",
+    "nightlord": "W. B. Harmonia",
+    "night": "Night 1",
+    "group": "Demon Prince",
     "standard": null,
     "slash": -18,
     "strike": 1,
@@ -1977,9 +1977,9 @@
     "madness": null
   },
   {
-    "name": "DEMON PRINCE",
-    "nightlord": "W. B. HARMONIA",
-    "night": "NIGHT 2",
+    "name": "Demon Prince",
+    "nightlord": "W. B. Harmonia",
+    "night": "Night 2",
     "standard": null,
     "slash": -18,
     "strike": 1,
@@ -1996,9 +1996,9 @@
     "madness": null
   },
   {
-    "name": "LORD OF BLOOD",
-    "nightlord": "W. B. HARMONIA",
-    "night": "NIGHT 2",
+    "name": "Lord Of Blood",
+    "nightlord": "W. B. Harmonia",
+    "night": "Night 2",
     "standard": 10,
     "slash": 10,
     "strike": 10,
@@ -2015,10 +2015,10 @@
     "madness": null
   },
   {
-    "name": "T. STRAGHESS (PHASE 1)",
-    "nightlord": "T. STRAGHESS",
-    "night": "NIGHTLORD",
-    "group": "T. STRAGHESS",
+    "name": "T. Straghess (Phase 1)",
+    "nightlord": "T. Straghess",
+    "night": "Nightlord",
+    "group": "T. Straghess",
     "standard": null,
     "slash": -10,
     "strike": null,
@@ -2035,10 +2035,10 @@
     "madness": null
   },
   {
-    "name": "T. STRAGHESS (PHASE 2)",
-    "nightlord": "T. STRAGHESS",
-    "night": "NIGHTLORD",
-    "group": "T. STRAGHESS",
+    "name": "T. Straghess (Phase 2)",
+    "nightlord": "T. Straghess",
+    "night": "Nightlord",
+    "group": "T. Straghess",
     "standard": 5,
     "slash": -5,
     "strike": 5,
@@ -2055,9 +2055,9 @@
     "madness": null
   },
   {
-    "name": "DEATH KNIGHT",
-    "nightlord": "T. STRAGHESS",
-    "night": "NIGHT 1",
+    "name": "Death Knight",
+    "nightlord": "T. Straghess",
+    "night": "Night 1",
     "standard": 40,
     "slash": 40,
     "strike": 40,
@@ -2074,9 +2074,9 @@
     "madness": null
   },
   {
-    "name": "GREAT RED BEAR",
-    "nightlord": "T. STRAGHESS",
-    "night": "NIGHT 1",
+    "name": "Great Red Bear",
+    "nightlord": "T. Straghess",
+    "night": "Night 1",
     "standard": null,
     "slash": -10,
     "strike": null,
@@ -2093,9 +2093,9 @@
     "madness": null
   },
   {
-    "name": "ARTORIAS",
-    "nightlord": "T. STRAGHESS",
-    "night": "NIGHT 2",
+    "name": "Artorias",
+    "nightlord": "T. Straghess",
+    "night": "Night 2",
     "standard": null,
     "slash": 10,
     "strike": -10,
@@ -2112,9 +2112,9 @@
     "madness": null
   },
   {
-    "name": "DANCING LION",
-    "nightlord": "T. STRAGHESS",
-    "night": "NIGHT 2",
+    "name": "Dancing Lion",
+    "nightlord": "T. Straghess",
+    "night": "Night 2",
     "standard": 30,
     "slash": 20,
     "strike": 30,
