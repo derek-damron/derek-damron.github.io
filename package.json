@@ -1,0 +1,8 @@
+{
+  "name": "derek-damron-github-io",
+  "private": true,
+  "scripts": {
+    "test": "node js/nightreign-crystals.test.js",
+    "test:crystals": "node js/nightreign-crystals.test.js"
+  }
+}

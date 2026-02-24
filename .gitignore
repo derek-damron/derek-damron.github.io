@@ -2,3 +2,6 @@ _site/*
 raw/*
 index_old.html
 .jekyll-cache/
+.vscode/
+tools/
+.DS_Store
