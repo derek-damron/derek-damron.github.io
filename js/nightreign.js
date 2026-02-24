@@ -16,6 +16,81 @@
 		});
 	}
 
+	// Bosses / Crystals tabs (run early so panels are correct before other init)
+	(function () {
+		var tabBosses = document.getElementById('nightreign-tab-bosses');
+		var tabCrystals = document.getElementById('nightreign-tab-crystals');
+		var panelBosses = document.getElementById('nightreign-panel-bosses');
+		var panelCrystals = document.getElementById('nightreign-panel-crystals');
+		var storageKey = 'nightreignActiveTab';
+
+		function showBosses() {
+			if (tabBosses) {
+				tabBosses.setAttribute('aria-selected', 'true');
+				tabBosses.classList.add('nightreign-tab-active');
+			}
+			if (tabCrystals) {
+				tabCrystals.setAttribute('aria-selected', 'false');
+				tabCrystals.classList.remove('nightreign-tab-active');
+			}
+			if (panelBosses) {
+				panelBosses.classList.remove('nightreign-tab-panel-hidden');
+				panelBosses.setAttribute('aria-hidden', 'false');
+			}
+			if (panelCrystals) {
+				panelCrystals.classList.add('nightreign-tab-panel-hidden');
+				panelCrystals.setAttribute('aria-hidden', 'true');
+			}
+			try { sessionStorage.setItem(storageKey, 'nightreign-panel-bosses'); } catch (e) {}
+		}
+
+		function showCrystals() {
+			if (tabBosses) {
+				tabBosses.setAttribute('aria-selected', 'false');
+				tabBosses.classList.remove('nightreign-tab-active');
+			}
+			if (tabCrystals) {
+				tabCrystals.setAttribute('aria-selected', 'true');
+				tabCrystals.classList.add('nightreign-tab-active');
+			}
+			if (panelBosses) {
+				panelBosses.classList.add('nightreign-tab-panel-hidden');
+				panelBosses.setAttribute('aria-hidden', 'true');
+			}
+			if (panelCrystals) {
+				panelCrystals.classList.remove('nightreign-tab-panel-hidden');
+				panelCrystals.setAttribute('aria-hidden', 'false');
+			}
+			try { sessionStorage.setItem(storageKey, 'nightreign-panel-crystals'); } catch (e) {}
+		}
+
+		if (tabBosses) tabBosses.addEventListener('click', showBosses);
+		if (tabCrystals) tabCrystals.addEventListener('click', showCrystals);
+
+		// Keyboard: Arrow Left/Right between tabs
+		var tabs = [tabBosses, tabCrystals];
+		tabs.forEach(function (tab, i) {
+			if (!tab) return;
+			tab.addEventListener('keydown', function (e) {
+				if (e.key === 'ArrowLeft' && i > 0) {
+					e.preventDefault();
+					tabs[i - 1].focus();
+					tabs[i - 1].click();
+				} else if (e.key === 'ArrowRight' && i < tabs.length - 1) {
+					e.preventDefault();
+					tabs[i + 1].focus();
+					tabs[i + 1].click();
+				}
+			});
+		});
+
+		// Restore last active tab from sessionStorage
+		try {
+			var saved = sessionStorage.getItem(storageKey);
+			if (saved === 'nightreign-panel-crystals') showCrystals();
+		} catch (e) {}
+	})();
+
 	// Surface map crystal indicators (runs regardless of table/select)
 	(function () {
 		var nightreignSurfaceMapPoints = [

@@ -14,6 +14,17 @@ title: Nightreign Bosses
 <body>
 	<div class="nightreign-page">
 		<h1>Nightreign Bosses</h1>
+		<div class="nightreign-page-options">
+			<label for="nightreign-protanopia">
+				<input type="checkbox" id="nightreign-protanopia" aria-label="Use protanopia-friendly colors" title="Helps users with red–green color vision deficiency (protanopia)">
+				Protanopia-friendly colors
+			</label>
+		</div>
+		<div class="nightreign-tabs" role="tablist">
+			<button type="button" class="nightreign-tab nightreign-tab-active" id="nightreign-tab-bosses" role="tab" aria-selected="true" aria-controls="nightreign-panel-bosses">Bosses</button>
+			<button type="button" class="nightreign-tab" id="nightreign-tab-crystals" role="tab" aria-selected="false" aria-controls="nightreign-panel-crystals">Crystals</button>
+		</div>
+		<div class="nightreign-tab-panel" id="nightreign-panel-bosses" role="tabpanel" aria-labelledby="nightreign-tab-bosses">
 		<div class="nightreign-controls">
 			<label for="nightreign-nightlord">Nightlord:</label>
 			<select id="nightreign-nightlord" aria-label="Filter by nightlord">
@@ -32,10 +43,6 @@ title: Nightreign Bosses
 					</ul>
 				</div>
 			</div>
-			<label for="nightreign-protanopia">
-				<input type="checkbox" id="nightreign-protanopia" aria-label="Use protanopia-friendly table colors" title="Helps users with red–green color vision deficiency (protanopia)">
-				Protanopia-friendly colors
-			</label>
 		</div>
 		<table class="nightreign-table">
 			<thead>
@@ -107,12 +114,15 @@ title: Nightreign Bosses
 				{% endfor %}
 			</tbody>
 		</table>
+		</div>
+		<div class="nightreign-tab-panel nightreign-tab-panel-hidden" id="nightreign-panel-crystals" role="tabpanel" aria-labelledby="nightreign-tab-crystals" aria-hidden="true">
 		<section class="nightreign-surface-map" aria-label="Surface map with crystal indicators">
 			<div class="nightreign-surface-map-inner">
 				<img src="{{ site.baseurl }}/images/surface-map-colorblinded.png" alt="Surface Map (Colorblinded)" />
 				<div class="nightreign-surface-map-overlay"></div>
 			</div>
 		</section>
+		</div>
 	</div>
 	<script src="{{ site.baseurl }}/js/nightreign.js"></script>
 </body>
