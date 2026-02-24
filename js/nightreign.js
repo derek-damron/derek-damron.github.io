@@ -123,16 +123,86 @@
 			C: ['1', '4', '8', '10', '15'],
 			D: ['2', '8', '9', '12', '14']
 		};
+		var groupNamesOrder = ['A', 'B', 'C', 'D'];
 
-		function getIdsToSync(id) {
+		function getGroupNamesContaining(id) {
+			var out = [];
+			for (var i = 0; i < groupNamesOrder.length; i++) {
+				var g = groupNamesOrder[i];
+				if (crystalGroups[g].indexOf(id) !== -1) out.push(g);
+			}
+			return out;
+		}
+
+		function getCrystalIdsInGroups(groupNames) {
 			var seen = {};
-			var groupName;
-			for (groupName in crystalGroups) {
-				if (crystalGroups[groupName].indexOf(id) !== -1) {
-					crystalGroups[groupName].forEach(function (gid) { seen[gid] = true; });
-				}
+			for (var i = 0; i < groupNames.length; i++) {
+				var ids = crystalGroups[groupNames[i]];
+				if (ids) for (var j = 0; j < ids.length; j++) seen[ids[j]] = true;
 			}
 			return Object.keys(seen);
+		}
+
+		function getAllCrystalIds() {
+			return nightreignSurfaceMapPoints.map(function (p) { return p.id; });
+		}
+
+		function getRemainingCrystalIds(stateObj) {
+			var all = getAllCrystalIds();
+			return all.filter(function (id) { return stateObj[id] && stateObj[id] !== 'inactive'; });
+		}
+
+		function findGroupWithExactCrystals(crystalIds) {
+			var set = {};
+			for (var i = 0; i < crystalIds.length; i++) set[crystalIds[i]] = true;
+			var idsSorted = Object.keys(set).sort();
+			for (var g = 0; g < groupNamesOrder.length; g++) {
+				var groupId = groupNamesOrder[g];
+				var groupIds = crystalGroups[groupId].slice().sort();
+				if (groupIds.length === idsSorted.length && groupIds.every(function (x, i) { return x === idsSorted[i]; })) return groupId;
+			}
+			return null;
+		}
+
+		function applyRemainingGroupToHighest(stateObj) {
+			var remaining = getRemainingCrystalIds(stateObj).sort();
+			var group = findGroupWithExactCrystals(remaining);
+			if (group) {
+				var ids = crystalGroups[group];
+				for (var i = 0; i < ids.length; i++) stateObj[ids[i]] = 'active';
+			}
+		}
+
+		function applyMoveUp(id, stateObj) {
+			var groups = getGroupNamesContaining(id);
+			if (groups.length === 1) {
+				var toEnable = getCrystalIdsInGroups(groups);
+				for (var i = 0; i < toEnable.length; i++) stateObj[toEnable[i]] = 'active';
+				var allIds = getAllCrystalIds();
+				for (var j = 0; j < allIds.length; j++) {
+					if (toEnable.indexOf(allIds[j]) === -1) stateObj[allIds[j]] = 'inactive';
+				}
+			} else if (groups.length === 2) {
+				var toDisable = getCrystalIdsInGroups(groups);
+				for (var k = 0; k < toDisable.length; k++) stateObj[toDisable[k]] = 'inactive';
+			}
+			applyRemainingGroupToHighest(stateObj);
+		}
+
+		function applyMoveDown(id, stateObj) {
+			var groups = getGroupNamesContaining(id);
+			if (groups.length === 1) {
+				var toDisable = getCrystalIdsInGroups(groups);
+				for (var i = 0; i < toDisable.length; i++) stateObj[toDisable[i]] = 'inactive';
+			} else if (groups.length === 2) {
+				var ids = getCrystalIdsInGroups(groups);
+				for (var j = 0; j < ids.length; j++) {
+					var sid = ids[j];
+					var idx = states.indexOf(stateObj[sid]);
+					stateObj[sid] = idx <= 0 ? 'inactive' : states[idx - 1];
+				}
+			}
+			applyRemainingGroupToHighest(stateObj);
 		}
 
 		function loadState() {
@@ -217,11 +287,9 @@
 			var point = nightreignSurfaceMapPoints.find(function (p) { return p.id === id; });
 			if (!point) return;
 			var state = stateById[id];
-			var idx = states.indexOf(state);
-			if (idx <= 0) return;
-			var newState = states[idx - 1];
-			var idsToSync = getIdsToSync(id);
-			idsToSync.forEach(function (syncId) { applyStateToCrystal(syncId, newState); });
+			if (state === 'inactive') return;
+			applyMoveDown(id, stateById);
+			nightreignSurfaceMapPoints.forEach(function (point) { applyStateToCrystal(point.id, stateById[point.id]); });
 			saveState(stateById);
 		});
 
@@ -233,11 +301,9 @@
 			var point = nightreignSurfaceMapPoints.find(function (p) { return p.id === id; });
 			if (!point) return;
 			var state = stateById[id];
-			var idx = states.indexOf(state);
-			if (idx >= 2) return;
-			var newState = states[idx + 1];
-			var idsToSync = getIdsToSync(id);
-			idsToSync.forEach(function (syncId) { applyStateToCrystal(syncId, newState); });
+			if (state === 'active') return;
+			applyMoveUp(id, stateById);
+			nightreignSurfaceMapPoints.forEach(function (point) { applyStateToCrystal(point.id, stateById[point.id]); });
 			saveState(stateById);
 		});
 
