@@ -240,6 +240,17 @@
 			idsToSync.forEach(function (syncId) { applyStateToCrystal(syncId, newState); });
 			saveState(stateById);
 		});
+
+		var resetBtn = document.getElementById('nightreign-crystals-reset');
+		if (resetBtn) {
+			resetBtn.addEventListener('click', function () {
+				nightreignSurfaceMapPoints.forEach(function (point) {
+					stateById[point.id] = 'possible';
+					applyStateToCrystal(point.id, 'possible');
+				});
+				saveState(stateById);
+			});
+		}
 	})();
 
 	if (!select || !table) return;

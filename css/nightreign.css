@@ -53,6 +53,10 @@
 	padding-top: 0.5cm;
 }
 
+#nightreign-panel-crystals {
+	padding-top: 0.5cm;
+}
+
 .nightreign-controls {
 	margin-bottom: 1rem;
 	display: flex;
@@ -284,6 +288,25 @@ body.nightreign-protanopia .nightreign-table tbody td.nightreign-cell-dark-red {
 	font-size: 12px;
 	margin-top: 0.25rem;
 	color: #555;
+}
+
+/* Crystals tab toolbar and Reset */
+.nightreign-crystals-toolbar {
+	margin-bottom: 1rem;
+}
+
+.nightreign-crystals-reset {
+	font-size: 14px;
+	padding: 0.5rem 1rem;
+	border: 1px solid #ccc;
+	background: #f5f5f5;
+	cursor: pointer;
+	color: #333;
+	border-radius: 2px;
+}
+
+.nightreign-crystals-reset:hover {
+	background: #e8e8e8;
 }
 
 /* Surface map with crystal indicators */
