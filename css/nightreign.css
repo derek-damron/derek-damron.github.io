@@ -1,0 +1,393 @@
+/* nightreign.html – interactive table page */
+
+.nightreign-page {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	max-width: 960px;
+	margin: 0 auto;
+	padding: 2rem;
+}
+
+.nightreign-page-options {
+	margin-bottom: 0.5rem;
+}
+
+.nightreign-tabs {
+	display: flex;
+	flex-direction: row;
+	gap: 0;
+	border-bottom: 1px solid #ccc;
+	margin-bottom: 0;
+}
+
+.nightreign-tab {
+	font-size: 14px;
+	padding: 0.5rem 1rem;
+	border: none;
+	border-bottom: 3px solid transparent;
+	background: none;
+	cursor: pointer;
+	color: #333;
+	margin-bottom: -1px;
+}
+
+.nightreign-tab:hover {
+	background: #f5f5f5;
+}
+
+.nightreign-tab.nightreign-tab-active {
+	font-weight: bold;
+	border-bottom-color: #0066cc;
+}
+
+.nightreign-tab-panel {
+	display: block;
+}
+
+.nightreign-tab-panel.nightreign-tab-panel-hidden,
+.nightreign-tab-panel[aria-hidden="true"] {
+	display: none;
+}
+
+#nightreign-panel-bosses {
+	padding-top: 0.5cm;
+}
+
+#nightreign-panel-crystals {
+	padding-top: 0.5cm;
+}
+
+.nightreign-controls {
+	margin-bottom: 1rem;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 1rem;
+	align-items: center;
+}
+
+.nightreign-controls label {
+	margin-right: 0.5rem;
+}
+
+.nightreign-controls select {
+	font-size: 14px;
+	padding: 0.25rem 0.5rem;
+}
+
+.nightreign-boss-dropdown {
+	position: relative;
+	display: inline-block;
+}
+
+.nightreign-boss-trigger {
+	font-size: 14px;
+	padding: 0.25rem 0.5rem;
+	border: 1px solid #ccc;
+	background: white;
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	min-width: 200px;
+}
+
+.nightreign-boss-trigger:hover {
+	background: #f5f5f5;
+}
+
+.nightreign-boss-value {
+	flex: 1;
+	text-align: left;
+}
+
+.nightreign-boss-arrow {
+	margin-left: 0.5rem;
+	font-size: 10px;
+	color: #666;
+}
+
+.nightreign-boss-dropdown-content {
+	display: none;
+	position: absolute;
+	top: 100%;
+	left: 0;
+	z-index: 1000;
+	background: white;
+	border: 1px solid #ccc;
+	border-top: none;
+	min-width: 200px;
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+	margin-top: 1px;
+}
+
+.nightreign-boss-dropdown-content.open {
+	display: block;
+}
+
+.nightreign-boss-search {
+	width: 100%;
+	font-size: 14px;
+	padding: 0.5rem;
+	border: none;
+	border-bottom: 1px solid #ccc;
+	box-sizing: border-box;
+}
+
+.nightreign-boss-search:focus {
+	outline: 1px solid #0066cc;
+	outline-offset: -1px;
+}
+
+.nightreign-boss-list {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	max-height: 300px;
+	overflow-y: auto;
+}
+
+.nightreign-boss-option {
+	padding: 0.5rem;
+	cursor: pointer;
+	font-size: 14px;
+}
+
+.nightreign-boss-option:hover {
+	background: #f5f5f5;
+}
+
+.nightreign-boss-option[data-value=""] {
+	font-weight: bold;
+}
+
+.nightreign-table {
+	width: 100%;
+	border-collapse: collapse;
+}
+
+.nightreign-table th,
+.nightreign-table td {
+	border: 1px solid #ccc;
+	padding: 0.5rem 0.75rem;
+	text-align: center;
+	vertical-align: middle;
+}
+
+.nightreign-table th {
+	background: #f5f5f5;
+	font-weight: bold;
+}
+
+.nightreign-th-icon {
+	display: block;
+	width: 24px;
+	height: 24px;
+	margin: 0 auto;
+	object-fit: contain;
+}
+
+.nightreign-table tbody tr:not(.nightreign-night-header):nth-child(even) {
+	background: #fafafa;
+}
+
+.nightreign-table tbody tr:not(.nightreign-night-header):hover {
+	background: #eee;
+}
+
+.nightreign-table tbody tr {
+	display: none;
+}
+
+.nightreign-table tbody tr:not(.hidden) {
+	display: table-row;
+}
+
+/* Section header rows for NIGHT 1 / NIGHT 2 grouping */
+.nightreign-table tbody tr.nightreign-night-header td {
+	background: #6b6b6b;
+	color: #fff;
+	font-weight: bold;
+	text-align: center;
+	padding: 0.5rem 0.75rem;
+	border: 1px solid #555;
+}
+
+.nightreign-table tbody tr.nightreign-night-header:hover td {
+	background: #6b6b6b;
+}
+
+.nightreign-table tbody td.nightreign-boss-merged {
+	vertical-align: middle;
+}
+
+/* Value-based cell colors (WCAG AA: light tints + dark text for 4.5:1 contrast) */
+.nightreign-table tbody td.nightreign-cell-red {
+	background: #f8d7da;
+	color: #1a1a1a;
+}
+
+.nightreign-table tbody td.nightreign-cell-yellow {
+	background: #fff3cd;
+	color: #1a1a1a;
+}
+
+.nightreign-table tbody td.nightreign-cell-green {
+	background: #d4edda;
+	color: #1a1a1a;
+}
+
+.nightreign-table tbody td.nightreign-cell-dark-red {
+	background: #3d2e2e;
+	color: #ffffff;
+}
+
+/* Protanopia-friendly overrides (toggle via .nightreign-protanopia on body) */
+body.nightreign-protanopia .nightreign-table tbody td.nightreign-cell-red { background: #2c5282; color: #ffffff; }
+body.nightreign-protanopia .nightreign-table tbody td.nightreign-cell-yellow { background: #cce5ff; color: #1a1a1a; }
+body.nightreign-protanopia .nightreign-table tbody td.nightreign-cell-green { background: #fff3cd; color: #1a1a1a; }
+body.nightreign-protanopia .nightreign-table tbody td.nightreign-cell-dark-red { background: #3d2e2e; color: #ffffff; }
+
+.nightreign-icon-reference {
+	margin-top: 2rem;
+	padding-top: 1.5rem;
+	border-top: 1px solid #ccc;
+}
+
+.nightreign-icon-reference h2 {
+	font-size: 1.25rem;
+	margin-bottom: 0.5rem;
+}
+
+.nightreign-icon-reference-desc {
+	font-size: 13px;
+	color: #555;
+	margin-bottom: 1rem;
+}
+
+.nightreign-icon-reference-desc a {
+	color: #0066cc;
+}
+
+.nightreign-icon-grid {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 1rem;
+}
+
+.nightreign-icon-grid figure {
+	margin: 0;
+	text-align: center;
+}
+
+.nightreign-icon-grid img {
+	display: block;
+	object-fit: contain;
+}
+
+.nightreign-icon-grid figcaption {
+	font-size: 12px;
+	margin-top: 0.25rem;
+	color: #555;
+}
+
+/* Crystals tab toolbar and Reset */
+.nightreign-crystals-toolbar {
+	margin-bottom: 1rem;
+}
+
+.nightreign-crystals-reset {
+	font-size: 14px;
+	padding: 0.5rem 1rem;
+	border: 1px solid #ccc;
+	background: #f5f5f5;
+	cursor: pointer;
+	color: #333;
+	border-radius: 2px;
+}
+
+.nightreign-crystals-reset:hover {
+	background: #e8e8e8;
+}
+
+/* Surface map with crystal indicators */
+.nightreign-surface-map {
+	margin-top: 2rem;
+}
+
+.nightreign-tab-panel#nightreign-panel-crystals .nightreign-surface-map {
+	margin-top: 1rem;
+}
+
+.nightreign-surface-map-inner {
+	position: relative;
+	display: inline-block;
+}
+
+.nightreign-surface-map-inner img {
+	display: block;
+	max-width: 100%;
+	height: auto;
+}
+
+.nightreign-surface-map-overlay {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	pointer-events: none;
+}
+
+.nightreign-surface-map-overlay .nightreign-crystal-indicator {
+	pointer-events: auto;
+}
+
+.nightreign-crystal-indicator {
+	position: absolute;
+	width: 2.5%;
+	height: auto;
+	aspect-ratio: 1;
+	border-radius: 50%;
+	border: none;
+	padding: 0;
+	cursor: pointer;
+	background: #ffc107;
+	transform: translate(-50%, -50%);
+}
+
+.nightreign-crystal-indicator:focus {
+	outline: 2px solid #0066cc;
+	outline-offset: 2px;
+}
+
+.nightreign-crystal-indicator .nightreign-crystal-indicator-dot {
+	display: block;
+	width: 100%;
+	height: 100%;
+	border-radius: 50%;
+}
+
+.nightreign-crystal-indicator.state-inactive {
+	background: #dc3545;
+}
+
+.nightreign-crystal-indicator.state-possible {
+	background: #ffc107;
+}
+
+.nightreign-crystal-indicator.state-active {
+	background: #28a745;
+}
+
+/* Protanopia-friendly crystal colors: red→dark blue, yellow→light blue, green→yellow */
+body.nightreign-protanopia .nightreign-crystal-indicator.state-inactive {
+	background: #2c5282;
+}
+
+body.nightreign-protanopia .nightreign-crystal-indicator.state-possible {
+	background: #cce5ff;
+}
+
+body.nightreign-protanopia .nightreign-crystal-indicator.state-active {
+	background: #fff3cd;
+}
